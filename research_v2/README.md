@@ -3,6 +3,8 @@
 This branch adds a bounded mechanism study alongside the unchanged v1.0.0 paper and evidence.
 Read the [pre-measurement design](../docs/protocol/upstream-repair-v2-design.md) for feasibility decisions, comparison fairness and stop conditions.
 
+The measured pilot is complete: see [results and limitations](RESULTS.md). Upstream repair recovers all 24 blocked cases; graph-free and graph-guided planning tie. Total added estimated usage: US$0.02077525.
+
 ## Offline reproduction
 
 Use Python 3.12. No additional dependencies, API key, Docker or network are needed for the v2 replay:
@@ -38,6 +40,8 @@ not silently replace this evidence. `python -m research_v2.run --live` resumes t
 responses. It loads the already configured, ignored study `.env.local` through the original API client, and shares
 the original cumulative US$20 ledger in `results/raw_runs/`. Install requirements.lock for paid execution.
 Provider errors, refusals and incomplete responses remain failed observations. Do not post credentials in issues.
+
+Transient HTTP/transport failures may cause up to three dispatch attempts per logical request; each attempt and conservative cost reservation is retained. Reproducing the optional figure requires the pinned matplotlib dependency: `python -m research_v2.figures.make_plot`.
 
 All model roles use gpt-6-luna. Each blocked case receives one call per planner arm, at most four candidate
 plans and twelve actions per plan. GraphNoSim reuses GraphPlanner proposals, so it has no additional model call.

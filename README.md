@@ -2,6 +2,8 @@
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
 
+**Research branch v2:** [Feasibility and findings (中文)](docs/v2-feasibility-and-findings.zh.md) · [Development pilot results](research_v2/RESULTS.md) · [Offline v2 replay](research_v2/README.md). Upstream recomputation recovered tasks that handle reuse could not, but the graph added no observed benefit over equally capable planning in this 48-case development pilot. The v1.0.0 paper and evidence below remain frozen.
+
 [中文说明](README.zh-CN.md) · [Reproduction guide](docs/artifact-guide.md) · [Paper](output/pdf/goal-aware-skill-study.pdf) · [Automated checks](https://github.com/victorcao1104/Goal-Aware-Capability-Reconciliation-and-Targeted-Repair-for-LLM-Agent-Skills-A-Controlled-Study/actions/workflows/reproduce.yml)
 
 ## Reproduce the published measurements
@@ -15,7 +17,7 @@ python -m scripts.reproduce
 
 No API key, Docker, or network is needed after dependencies are installed. Results are recomputed in a new `work/reproduced/` directory and compared against every field in the published summary/facts and all three manuscript LaTeX tables. For a repeat attempt, supply a new `--output` path. Use `--verify-only` for hash verification without recomputation. See the [artifact guide](docs/artifact-guide.md) for environment setup, schemas, output paths and optional fresh paid execution.
 
-Status: experiment and IEEE manuscript complete. All 1,920 scheduled executions are valid; 167 of 168 original static cases resolved. All 1,362 experimental API calls used `gpt-6-luna`. Conservative total usage estimate: **US$1.013328125**, with no unsettled reservations.
+V1 status: experiment and IEEE manuscript complete. All 1,920 scheduled executions are valid; 167 of 168 original static cases resolved. All 1,362 v1 experimental API calls used `gpt-6-luna`. Conservative v1 usage estimate: **US$1.013328125**, with no unsettled reservations. Including the v2 pilot, cumulative study usage is **US$1.034103375**.
 
 The study tests whether independently inferred task authority, skill behaviour paths, and targeted repair improve security and preserve legitimate task utility. The live baseline had zero observed attacks and 99.3% task success. Under deterministic stress, B5 reached 83.3% attacked joint success versus 33.3% for deny-only B2P, but graph-free selective B2R matched B5. The evidence supports selective filtering in this bounded runtime, **not incremental benefit from goal-graph selection**. Prior studies in the parent workspace are historical references, not results of this study.
 
