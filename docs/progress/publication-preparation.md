@@ -20,3 +20,5 @@ The initial read-only review of the brainstorming skill was applied as a bounded
 
 
 The corrected offline helper passed complete reaggregation using the freshly installed pinned dependencies. Both summary JSON files matched recursively within 1e-10 and all three LaTeX tables matched byte-for-byte. The helper left original data untouched. The original 30 file hashes and 3,595 evidence records passed. Linux/Windows CI is configured for the uploaded commit; its remote status must be checked separately.
+
+The first remote run exposed Git for Windows failing to create a pack keep-file because GitHub repeats this repository's long name in its default workspace path. The CI configuration now applies `core.longpaths` to checkout subprocesses and creates a short local working checkout under the runner's temporary directory. This does not alter experiment code or evidence. The initial Linux job passed dependency installation and all unit tests; final cross-platform reaggregation is checked on the corrected commit.
