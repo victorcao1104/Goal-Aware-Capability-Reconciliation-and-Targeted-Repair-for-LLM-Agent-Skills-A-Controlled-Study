@@ -31,7 +31,7 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.lock
       - name: Use a short working checkout
-        run: git clone --local --no-hardlinks "${{ github.workspace }}" "${{ runner.temp }}/gcr-source"
+        run: python -c "import io, os, subprocess, zipfile; from pathlib import Path; data = subprocess.check_output(['git', 'archive', '--format=zip', 'HEAD']); zipfile.ZipFile(io.BytesIO(data)).extractall(Path(os.environ['RUNNER_TEMP']) / 'gcr-source')"
       - name: Install pinned dependencies
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m pip install -r requirements.lock
