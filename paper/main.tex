@@ -1,0 +1,31 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,array,graphicx,url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\usepackage{microtype}
+\newcommand{\method}{GCR}
+\newcommand{\luna}{GPT-6 Luna}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\percent}[1]{#1\%}
+\title{Goal-Aware Capability Reconciliation and Targeted Repair for LLM Agent Skills: A Controlled Study}
+\author{\IEEEauthorblockN{Victor Cao}\IEEEauthorblockA{Faculty of Science\\University of Auckland\\Auckland, New Zealand}}
+\begin{document}
+\maketitle
+\pagestyle{plain}
+\input{sections/abstract}
+\begin{IEEEkeywords}
+agent skills, least privilege, prompt injection, information flow, capability contracts, experimental evaluation
+\end{IEEEkeywords}
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

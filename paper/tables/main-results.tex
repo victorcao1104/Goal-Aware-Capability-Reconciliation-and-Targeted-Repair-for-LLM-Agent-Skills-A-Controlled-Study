@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{Main-test outcomes (percent). Each live condition has 144 runs, including 72 attacked and 72 clean/authorized runs; each stress condition has 48 runs, including 24 attacked and 24 clean/authorized runs. Joint success is measured on attacked runs.}
+\label{tab:mainresults}
+\centering\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+& \multicolumn{4}{c}{Live model plans} & \multicolumn{4}{c}{Deterministic stress replay} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Method & ASR $\downarrow$ & TSR $\uparrow$ & Benign TSR & Joint $\uparrow$ & ASR $\downarrow$ & TSR $\uparrow$ & Benign TSR & Joint $\uparrow$ \\
+\midrule
+B0 & 0.0 & 99.3 & 98.6 & 100.0 & 100.0 & 91.7 & 100.0 & 0.0 \\
+B1 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+B2 & 0.0 & 92.4 & 87.5 & 97.2 & 58.3 & 83.3 & 91.7 & 33.3 \\
+B2P & 0.0 & 91.7 & 86.1 & 97.2 & 0.0 & 62.5 & 91.7 & 33.3 \\
+B2R & 0.0 & 92.4 & 87.5 & 97.2 & 0.0 & 87.5 & 91.7 & 83.3 \\
+B3 & 0.0 & 56.2 & 83.3 & 29.2 & 29.2 & 54.2 & 87.5 & 0.0 \\
+B4 & 0.0 & 41.7 & 83.3 & 0.0 & 0.0 & 43.8 & 87.5 & 0.0 \\
+B5 & 0.0 & 92.4 & 87.5 & 97.2 & 0.0 & 87.5 & 91.7 & 83.3 \\
+\bottomrule
+\end{tabular}
+\end{table*}

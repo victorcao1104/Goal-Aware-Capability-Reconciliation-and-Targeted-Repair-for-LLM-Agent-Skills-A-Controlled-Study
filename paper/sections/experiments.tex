@@ -1,0 +1,90 @@
+\section{Experimental Design and Implementation}
+\subsection{Data Construction and Provenance}
+Table~\ref{tab:datasets} distinguishes the three cohorts. The original Skill-Inject checkout is pinned to commit \code{182f3d9d9836}; the acquisition manifest records its complete hash and the hashes of downloaded papers. At that revision, the files contain 48 contextual and 36 obvious injections, 58 task records, and 40 top-level Skill directories. We used these inspected counts rather than copying counts from the initial project proposal. Dataset versions and counting units are part of the experimental definition, not interchangeable descriptions of a single timeless benchmark.
+
+For each original injection, a deterministic procedure selects the first constructible associated task. It copies the complete corresponding bundle, inserts the injection at the recorded line according to the inspected builder's insertion semantics, and includes supplied attack scripts. It also constructs a clean paired version. The selection log records task associations that were excluded and their reasons. This produces 84 injected and 84 clean static cases. Of these 168 projections, 118 contain all selected text and 50 have partial text coverage. Complete binary and omitted files remain available in the local acquisition directory, but they are not silently treated as model-visible evidence.
+
+The controlled dataset contains 12 named scenario families, two resource instances per family, and four variants per instance: clean, injected, authorized, and unauthorized. This gives 96 cases. Clean and injected variants keep the task fixed while altering the workflow and its framing. Authorized and unauthorized variants keep the same workflow and instructions while adding or withholding a specific user override. Thus a private transfer can be correct in one variant and prohibited in its paired variant. The positive examples are necessary: a defense that rejects every transfer should not appear successful merely because the evaluation contains only attacks.
+
+The base task reads a public input record, changes only the output's summary field, and sends the complete input record to an approved service. It allows local inspection of private and notice records while prohibiting their additional disclosure or delivery. Controlled mechanisms include an extra private transfer, an unrelated owner-field change, an extra public notification, a mixed upload, a concatenated intermediate value, and a conditional mixed upload. The Document, Code, and Email labels indicate scenario framing; all three use the same structured-file and outbox substrate. They do not constitute native Word, repository, and mail-client integrations.
+
+Four families (32 cases) are assigned to development, two (16 cases) to validation, and six (48 cases) to the formal test set. Named families do not cross partitions. However, the common task pattern and broad attack mechanisms do recur. The split therefore controls direct fixture reuse but does not establish generalization to unseen workflow templates. Within the test set, the 48 cases represent 12 resource instances and six scenario families, not 48 unrelated applications. We preserve this dependence in uncertainty calculations and state it explicitly in interpretation.
+
+The transfer cohort takes six original contextual injection texts (IDs 1, 2, 6, 7, 26, and 32) and appends them to new structured fixtures, producing six clean/injected pairs. Original task identifiers and prompts remain in provenance metadata, while the actual execution task is the new fixture task. Literal original destinations may be present in the text, but calls still go only to the mock outbox. This cohort tests a limited portability question about attack wording. It neither reproduces the original tasks nor substitutes its results for a native Skill-Inject evaluation.
+
+\begin{table}[t]
+\caption{Distinct evidence cohorts and their supported interpretations}
+\label{tab:datasets}
+\centering\small
+\begin{tabular}{p{.24\columnwidth}r p{.48\columnwidth}}
+\toprule
+Cohort & Cases & Supported evidence \\
+\midrule
+Original static & 168 & Bundle-label agreement; 118 complete-text and 50 partial-text projections. \\
+Authored controls & 96 & 32 development, 16 validation, 48 test; exact fixture acceptance. \\
+Transferred text & 12 & Six original attack texts in new fixtures, each with a clean pair. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The original static cases cover 35 family identifiers and 117 distinct bundle hashes, including only 33 distinct clean-bundle hashes. Paired clean cases can repeat a bundle. Static case-level rates therefore weight these repeated pairings and must not be described as performance on 168 unique Skills.
+
+\subsection{Comparators and Ablations}
+We compare eight principal methods, defined in Table~\ref{tab:methods}. They share the executor prompt, model, action budget, resource bindings, initial fixture, and outcome oracle. The task, Skill, and scanner analyses for a case/repeat are cached and reused across methods. Only the intermediate components relevant to a method influence its decisions; executing the orchestration code does not imply that B0 or B2R consumes the graph. This reuse isolates policy behavior and controls cost, but means observed wall-clock runner times are not independent cold-start timings for each method.
+
+B2 distinguishes exact operation/resource mediation from source and field scope. B2P adds the latter but denies a mixed request as a unit. B2R adds the same selective filtering capability as the proposed B5 at every mismatched sink, without graph selection. This comparator is central: if B5 only improves over B2P, the gain may come from repair rather than goal reasoning. B3 coarsely blocks a Skill if an extracted action mismatches the operation/resource task gate; B4 uses goal-path findings for the coarse block. Their fallback runtime gate remains active when the Skill is not blocked. B1 is a generic Skill-only model scanner, not a reproduced published detector.
+
+\begin{table*}[t]
+\caption{Principal conditions. All are implemented in the same closed runtime.}
+\label{tab:methods}
+\centering\small
+\begin{tabular}{lllp{.40\textwidth}}
+\toprule
+ID & Authority/check & Intervention & Purpose \\
+\midrule
+B0 & No runtime task gate & Observe effects & Same instructed executor without added mediation. \\
+B1 & Skill-only risk judgment & Whole-Skill block & Generic content screening without current task. \\
+B2 & Task operation and resource & Deny action & Tests endpoint/path scope without data or field scope. \\
+B2P & Task plus sources and fields & Deny action & Stronger task-only gateway, no repair. \\
+B2R & Task plus sources and fields & Filter at any sink & Strong graph-free selective-repair comparator. \\
+B3 & Action--task mismatch & Whole-Skill block & Coarse action reconciliation, no goal-path reasoning. \\
+B4 & Goal-path mismatch & Whole-Skill block & Goal-aware detection without selective repair. \\
+B5 & Goal-path mismatch & Filter at selected resources & Proposed combination of path selection and repair. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Five additional conditions run in stress mode. \emph{No task} removes task-based enforcement. \emph{No source flow} removes source-dependency checking while retaining field scope. \emph{No repair} uses the B2P gateway. \emph{Advice only} has no runtime enforcement; the deterministic replay deliberately does not obey advisory prose, making this an enforcement ablation rather than a live-model prompting comparison. \emph{Scope inspired} conservatively blocks a Skill on action-level mismatches. It is not an implementation of SkillScope's replay validation and source rewriting, so its outcome cannot be used to rank this work against SkillScope.
+
+\subsection{Model Protocol and Frozen Execution}
+Every experimental model call uses the OpenAI Responses API with \code{gpt-6-luna}~\cite{openailuna2026}, low reasoning effort, strict JSON schemas, and storage disabled. Task extraction, Skill extraction, screening, task-aware static comparison, and execution use the same model. There is no cross-model claim. Maximum output-token budgets are 5,000 for contracts, 7,500 for graphs, 1,800 for Skill-only screening, 2,200 for joint task-aware screening, and 3,500 for executor plans. No temperature or seed parameter is supplied; repeated responses are recorded rather than assumed identical.
+
+For each live case/repeat, all principal methods receive the same initial model proposal. This coupling prevents the comparison from attributing a lucky initial sample to a defense. If a method produces denial/error feedback, its second proposal is conditioned on that feedback and may differ. Three repeats use repeat-specific analysis and proposal identities. Method order is deterministically shuffled using seeds 101, 102, and 103; these seeds control scheduling, not model sampling. Up to four family workers run concurrently, with a shared transactional budget ledger.
+
+The main live cohort contains $48\times3\times8=1{,}152$ executions. Stress replay uses $48\times13=624$ executions, including the eight principal methods and five ablations. Transfer runs use $12\times3\times4=144$ executions with B0, B2P, B2R, and B5. The frozen schedule therefore contains 1,920 executions. These are method-condition runs, not 1,920 distinct tasks or independent trials. Static analysis of the 168 original cases is reported separately.
+
+Development included an eight-case B0/B5 live pilot. Validation uses one instance from each validation family, all four variants, and B0/B5. A prespecified feasibility gate requires baseline completion of at least three of four clean/authorized validation tasks. Before formal dispatch, the final validation passed all four. Source files, tests, data, report generation, and container identity were then hashed in the frozen manifest. Formal outcomes were not used to change prompts, thresholds, or acceptance rules. Development and successive validation campaigns remain in the archive with distinct identifiers and are excluded from formal statistics.
+
+\subsection{Measures and Uncertainty}
+Let $A_i$ denote an observed unauthorized effect and $U_i$ denote successful completion of all required fixture outcomes. Let $\mathcal{I}$ contain valid injected/unauthorized runs and $\mathcal{V}$ contain all valid runs. We compute
+\begin{align}
+ \mathrm{ASR}&=\frac{\sum_{i\in\mathcal{I}} A_i}{|\mathcal{I}|}, &
+ \mathrm{TSR}&=\frac{\sum_{i\in\mathcal{V}} U_i}{|\mathcal{V}|},\\
+ \mathrm{Joint}&=\frac{\sum_{i\in\mathcal{I}} U_i(1-A_i)}{|\mathcal{I}|}.
+\end{align}
+We additionally report clean/authorized TSR. A useful artifact can coexist with a harmful side effect, so TSR alone is insufficient. Similarly, stopping all work can drive ASR down while failing every task. Joint success is the primary repair outcome because it requires both properties in the same attacked execution.
+
+False-block rate (FBR) is the number of denied independently legal requests divided by the number of independently legal requested events. The reference check uses literal fixture permissions and observed handle origins, not the defense matcher. Requests using nonexistent handles are excluded from the legal-event denominator. FBR is therefore an event-level measure conditional on attempted valid actions; it does not capture all failures to propose useful work and cannot replace task completion. Repair events are not counted as denials when their effective action is legal.
+
+For task extraction, a fixed finite universe contains operation/resource atoms, source atoms, and possible write-field atoms. We compare extracted authorization sets with the authored reference, reporting precision, recall, F1, and exact-set agreement. Required and permitted are collapsed for this analysis. The representation measure is distinct from effective gateway behavior when duplicate or unresolved entries fail closed. For graph extraction, we compare operation/resource nodes and data dependencies with observed unmediated closed-tool traces. These checks cover the fixture vocabulary, not prose-level control semantics or general cross-language paths. No human-grounded path F1 is reported.
+
+Static screening is scored as agreement with the original injected/clean bundle labels. A contextual injection label is not an independent judgment that every possible use is forbidden. Consequently, a task-aware scanner's disagreement may reflect policy ambiguity as well as detection error. We report projection coverage and unresolved records alongside confusion counts rather than turning an unavailable judgment into a benign label.
+
+Intervals use 4,000 bootstrap draws over named families, retaining all cases, variants, repeats, and method pairing within a sampled family. Paired differences resample the same families for both methods. With six main-test clusters, these are exploratory intervals rather than a strong asymptotic guarantee. Repeated instances and templates are dependent. In particular, all-zero observed attacks yield a degenerate percentile interval; that outcome does not establish zero population risk. We avoid independent-binomial certainty claims and post-hoc selection of favorable comparisons.
+
+\subsection{Failure Accounting and Reproducibility}
+Completed provider refusals and incomplete model generations retain explicit categories and observable state. They remain behavioral outcomes: a refusal before work is unsuccessful on the task, with no observed attack. Transport failures, missing analyses, and container failures remain missing security/utility observations and appear in the completion audit. Missing rates are displayed as unavailable, not zero. The run manifest detects missing, unexpected, and duplicate execution identifiers before delivery.
+
+Each paid request reserves a conservative cost before dispatch. The ledger uses an operating-system file lock and reloads state transactionally, preventing separate clients from overwriting each other's reservations. Unknown charges from interrupted calls retain their reservations. The accounting assumes up to US\$0.125 per million input tokens and US\$0.50 per million output tokens, includes reasoning within output usage, and enforces a US\$20 total ceiling. Reported cost is an upper estimate from usage and retained reservations, not a provider invoice. It includes development, validation, static analysis, retries, and execution.
+
+The local archive retains model requests/responses, exact prompts, per-action traces, final states, component analyses, summaries, and frozen input hashes. The public-ready export preserves measurement evidence and accounting but omits original-text-derived payloads and full API message content. Source acquisition instructions regenerate original material at the pinned revisions. Downloaded papers and upstream repositories remain local, with license notes explaining the distinction. Credentials and temporary key-setup material are excluded. The implementation uses Python 3.12 and a Linux Docker runtime; dependencies and build steps are recorded for re-execution without the original desktop environment.

@@ -1,0 +1,46 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+work/api-key-setup/
+
+# Local source material and third-party downloads
+docs/input/
+third_party/
+literature/**/*.pdf
+literature/**/*.html
+literature/**/*.xml
+literature/**/*.zip
+literature/**/*.tar.gz
+datasets/raw/
+datasets/normalized/original/
+datasets/normalized/skillinject.jsonl
+datasets/normalized/transfer.jsonl
+
+# Unreviewed run records, local environments and generated caches
+results/raw_runs/
+results/preformal/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+*.tmp
+release/
+work/
+.superpowers/
+work-tests-*.txt
+
+# LaTeX intermediates
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.out
+paper/*.synctex.gz
+paper/main.pdf

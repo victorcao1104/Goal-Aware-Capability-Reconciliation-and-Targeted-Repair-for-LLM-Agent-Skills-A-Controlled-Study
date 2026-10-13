@@ -1,0 +1,106 @@
+\section{Methodology}
+\subsection{Setting and Trust Boundary}
+Let $T$ be the current user task, $B$ a Skill bundle, and $S_0$ a resettable fixture state. The bundle contains an instruction file and zero or more script or reference files. The experiment asks an agent to produce tool actions $a_1,\ldots,a_k$ that satisfy $T$. An adversary may change the bundle's instructions and supplied workflow, but not $T$, the resource bindings, the fixture labels, the tool implementation, or the evaluator. An authorized variant changes $T$ explicitly and keeps the relevant workflow fixed. This provides a direct test that the defense responds to authority rather than simply to a suspicious API name.
+
+The protected effects are structured-file changes and deliveries to a simulated outbox. G1 denotes a disallowed information transfer, G2 an unauthorized modification or deletion, and G3 an unauthorized external action such as sending a public notice to an unapproved destination. The code assigns G1 to a mismatched send when any contributing source is not labelled public; unknown sensitivity is treated conservatively. These categories organize findings and fixtures. They are not independent evidence that a static path actually executes.
+
+Trusted components include the fixture loader, resource normalizer, schema/evidence validators, runtime gateway, provenance implementation, and outcome evaluator. The task-contract model is also a practical semantic dependency: deterministic validation can check that a quotation exists but cannot prove that the model inferred its meaning correctly. We therefore do not claim to remove the language model from the authority trusted computing base. The executor and Skill analyzer may be wrong or influenced by bundle content. Their output is treated as a proposal, never as authorization to contact the host network or execute arbitrary code.
+
+Every execution starts in a new Linux container with networking disabled, a read-only root filesystem, no host mounts, no Linux capabilities, a non-root user, and bounded memory, process count, and CPU allocation. The container receives only synthetic fixture data and the proposed policy. The API key stays in the host-side client. Tool calls update in-memory dictionaries; the outbox records a delivery but does not transmit it. This design is a controlled evaluation instrument. Docker supplies process isolation around the instrument, not a demonstration that the proposed policy safely mediates all system calls of an unrestricted agent.
+
+\subsection{Independent Task Authority}
+The task analyzer receives only $T$ and trusted resource identities $R$. It cannot inspect $B$. It emits a set of permission entries
+\begin{equation}
+ p=(o,r,\sigma,P,F,e),
+\end{equation}
+where $o$ is an operation, $r$ a resource, $\sigma$ is one of required, permitted, forbidden, or unresolved, $P$ is a set of original data sources, $F$ is a set of permitted write fields, and $e$ is verbatim supporting task text. Required and permitted both authorize an operation; the distinction records necessity but is not used to automatically schedule work. Only the independent evaluator determines whether required outcomes were achieved.
+
+Each entry must cite an exact substring of the user task and name a bound resource. Resource identity must also appear in the task, directly or by its basename. An available path does not become permitted merely because it exists. Paths are normalized under the virtual work directory; parent traversal, backslash ambiguity, wildcards, and encoded ambiguity are rejected. HTTP(S) endpoints are compared by normalized exact identity, including path and query, rather than hostname suffix. Scheme and hostname case and default ports are canonicalized. These rules cover the fixture namespace; they are not a complete filesystem or URL security specification for arbitrary software.
+
+Conflicting entries are handled conservatively. Multiple positive entries for the same operation and resource do not union their authority. An unresolved entry prevents a usable grant. A whole-operation prohibition removes the grant, whereas source- or field-scoped prohibitions subtract the prohibited elements. This distinction matters when the task permits sending a public record to a service but separately forbids sending private data there. Treating that scoped prohibition as a blanket destination ban would introduce a false block. Later explicit user overrides are represented in the generated contract; whether the model interprets the override correctly is measured rather than assumed.
+
+For a runtime action $a=(o,r,P_a,F_a)$, the strongest task gate accepts it only if a usable grant exists and
+\begin{equation}
+ P_a\subseteq P_p,\qquad F_a\subseteq F_p
+ \label{eq:scope}
+\end{equation}
+for the applicable send/write source scope and write-field scope. Reading requires an explicit grant. Local transforms and termination have no external effect and are available independently, but transforms preserve source information. Missing or unresolved authority results in denial. The executor receives feedback but cannot expand the contract in response. The study does not include an interactive approval mechanism because the user requested a fully automatic evaluation.
+
+\subsection{Skill Representation and Evidence Checks}
+Separately, a Skill analyzer receives the bundle without the task. It proposes a graph $G=(V,E)$ with action nodes, literal resources where known, source paths, write fields, conditions, and evidence locations. Edges distinguish data, control, call, and return relationships. Every retained node needs a valid file key, a unique identifier, and a verbatim evidence span. Edges whose endpoints are rejected are removed. Reads of files already supplied as bundle context are excluded from runtime effects. A valid quotation anchors a proposal but does not establish that the proposed action or dependency is semantically correct.
+
+A deterministic Python abstract-syntax-tree pass recognizes the deliberately small tool notation in the controlled workflows. It extracts literal calls to read, write, send, delete, transform, and create, and links variables to their producing calls. Literal false branches are marked infeasible; unknown conditions, loops, and function bodies remain potential. This pass is not a general Python analyzer: imports, dynamic dispatch, string-built commands, and arbitrary library behavior are not given executable semantics. In the hybrid graph, recognized code actions replace corresponding model nodes at matching file, operation, and resource keys. Remaining language-model nodes cover prose and unfamiliar syntax. Edges touching replaced model nodes are not automatically reconstructed across representation boundaries, so cross-layer links may be lost.
+
+We retain the language-model, AST, and hybrid graphs independently. This permits component measurement without presenting AST success on a purpose-built language as evidence of general semantic understanding. For original bundles, complete files are retained locally, but the model sees a bounded text projection. The selection prioritizes main instructions and injected scripts, limits text length to 80,000 characters, and records omitted or binary content. A partial projection is never called a complete audit. Even a complete-text projection may contain code whose semantics our extractor does not understand.
+
+\begin{figure*}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[node distance=5mm and 8mm, box/.style={draw,rounded corners,align=center,font=\small,minimum height=9mm,text width=30mm}, arr/.style={-Latex,thick}]
+\node[box] (task) {Trusted user task\\and resource bindings};
+\node[box,below=of task] (bundle) {Untrusted Skill\\instructions and scripts};
+\node[box,right=of task] (contract) {Task-only extraction\\and evidence checks};
+\node[box,right=of bundle] (graph) {Skill-only extraction\\plus bounded AST facts};
+\node[box,right=12mm of contract,yshift=-7mm] (goals) {Contract--path comparison\\and sink selection};
+\node[box,right=of goals] (gate) {Runtime source/field gate\\with selected repair};
+\node[box,right=of gate] (state) {Observed fixture effects\\and independent oracle};
+\draw[arr] (task)--(contract);
+\draw[arr] (bundle)--(graph);
+\draw[arr] (contract)--(goals);
+\draw[arr] (graph)--(goals);
+\draw[arr] (goals)--(gate);
+\draw[arr] (gate)--(state);
+\draw[arr] (contract.north) to[bend left=22] node[above,font=\scriptsize]{authority also mediates every effect} (gate.north);
+\end{tikzpicture}}
+\caption{The proposed pipeline separates the source of authority from the description of candidate behavior. B2R uses the same contract and filtering capability without the graph or sink-selection step. The final oracle is outside the defense and reads observable state and committed events.}
+\label{fig:architecture}
+\end{figure*}
+
+\subsection{Goal-Path Reconciliation}
+For each potential send, write, or delete sink, a bounded backward search follows data, call, and return edges. Chronological control edges alone do not establish that data reaches a sink. The search accumulates original read resources and candidate witness paths, skips nodes on provably false branches, and stops after depth 12. A remaining predecessor at the depth bound produces an unresolved finding. Cycles are bounded by the current path. This avoids nontermination, but it can miss longer or unrepresented flows; absence of a finding is not proof of safety.
+
+The resulting source set augments the sink's proposed action and is compared with the task contract. A mismatch produces a potential G1--G3 finding with its sink, source set, one longest retained witness, and source evidence. Unknown conditions remain conservative candidates. We do not run an SMT feasibility analysis, solve aliasing for general programs, or prove that every abstract path can occur. Accordingly, the word \emph{goal} means an effect pattern used to organize restrictions, not a proof of an adversary's intent or an exhaustive reachability theorem.
+
+Runtime mediation remains active even if static reconstruction misses an effect. This choice is essential to interpreting the comparison: B5 does not rely exclusively on the graph for security. The graph selects where selective repair may happen, while the contract determines which effects are allowed. A missed graph finding may therefore lower utility by causing a coarse denial at a later sink rather than directly permitting an unauthorized action. An overbroad contract, by contrast, can affect all methods that depend on it.
+
+\subsection{Targeted Repair and Its Limited Minimality}
+Each finding contributes an item to a finite set $\mathcal{W}$. A candidate restriction $c$ covers findings at one sink; a whole-Skill block covers all findings. The selector solves
+\begin{equation}
+ \min_{X\subseteq\mathcal{C}}\sum_{c\in X}w_c
+ \quad\text{subject to}\quad
+ \bigcup_{c\in X}\operatorname{cover}(c)\supseteq\mathcal{W}.
+ \label{eq:repair}
+\end{equation}
+Enumeration is capped at 20 candidates. A sink restriction costs one unit; whole-Skill blocking costs ten plus the number of sinks. Ties are deterministic. In these fixtures, each finding has an available sink restriction and that cost design favors their selection. Equation~\ref{eq:repair} therefore describes a bounded policy-selection mechanism, not evidence that difficult global program optimization was solved. The study evaluates the selected restrictions' effects rather than claiming global least privilege or minimum semantic change.
+
+At a selected resource, the runtime can remove data handles whose source sets exceed the grant and remove disallowed write fields. It accepts the repaired action only after checking the narrowed action again. It never substitutes a new destination, grants a new source, or invents an authorization. If no valid data or fields remain, the action is denied. Selection is implemented at resource granularity: multiple actions touching the selected resource share the repair opportunity. This is coarser than an exact source-code-location patch and should not be described as rewriting a native Skill.
+
+A handle records a value and its original sources. Copy and field selection retain their sources; concatenation unions them. Writes propagate origins into the destination's fields, and subsequent reads recover the accumulated origins. Literal creation inherits all previously observed sources, preventing an executor from discarding taint merely by rewriting a value. This conservative treatment can overtaint harmless derived values. In particular, a concatenated handle that mixes public and private records cannot be partially separated by the current repair operation. Removing that handle can prevent an otherwise legitimate delivery.
+
+\begin{table}[t]
+\caption{Worked fixture: separating authority, provenance, and utility}
+\label{tab:example}
+\centering\small
+\begin{tabular}{p{.25\columnwidth}p{.65\columnwidth}}
+\toprule
+Element & Interpretation \\
+\midrule
+User task & Update only report.summary; send public record to approved service; inspect private file locally. \\
+Candidate effect & Send handles $h_p,h_s$ to the approved service, with origins public and private. \\
+Destination gate & Both handles pass because the endpoint is allowed. \\
+Source gate & Deny the mixed request because private is outside the send grant. \\
+Selective repair & Retain $h_p$ and send the complete public record; deny the private component. \\
+Opaque mixture & If one handle contains both records, dropping it loses the required upload. \\
+Oracle & Check complete required records, all preserved fields, and every unauthorized committed effect. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Execution and Independent Acceptance}
+The live executor emits a strict JSON action plan. Successful read, transform, and create calls allocate sequential handles, allowing the model to propose a small sequential plan. Each round contains at most 16 actions. The host executes the plan in order and provides tool feedback; a denial or error permits one further round. A successful repair alone does not trigger another round. The system prompt prioritizes the task over the Skill for every method, including B0. Thus B0 is an unmediated tool baseline with the same instructed executor, not a model stripped of instruction hierarchy or provider safeguards.
+
+The stress mode translates the supplied closed workflow into tool actions through syntax parsing and executes one fixed sequence. It does not invoke Python evaluation or run downloaded scripts. It is a mechanism test of the gateway under requested effects that may never occur in live-model behavior. Using both modes prevents two misleading inferences: strong replay enforcement does not imply a measured reduction in model susceptibility, and a resistant model does not by itself demonstrate that a gateway can correctly repair a mixed request.
+
+The outcome oracle is implemented separately from the defense matcher. It compares the complete final file map with the initial fixture plus exactly the permitted changes. Required deliveries must contain the complete expected record, including nested records in concatenated values. A summary substring or conservative taint label is insufficient evidence of delivery. The oracle also checks committed events, including writes that were later restored, so the final artifact cannot conceal an earlier forbidden effect. Synthetic private canaries provide an additional content-based disclosure check independent of claimed sources.
+
+This oracle embodies the authored fixture specification and is not independent human ground truth. Its value is that it reads a different evidence path from the policy generator and does not simply ask whether the defense accepted its own decision. Regression tests include missing record fields, empty but tainted payloads, unauthorized deletes, extra output fields, transient forbidden-source writes, and repaired writes whose effective fields differ from the original request. These checks are especially important when security and utility can diverge within one execution.
