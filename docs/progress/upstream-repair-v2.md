@@ -16,4 +16,5 @@ Plan: docs/superpowers/plans/2026-10-14-upstream-repair-v2.md
 - Ruling after measurement: progression target not reached. Preserve the null graph result and defer native/multi-Skill expansion. All model outputs supplied one candidate and syntactic pools contained at most two; disclose ceiling effects and lack of a meaningful selection test.
 - Final publication review independently cross-checked 384 trials, 72 proposal records, paired zero differences, single-candidate responses and cost delta; no publication-claim blocker found.
 - Publication audit: 106 changed/new files (2,947,387 bytes at audit time), no credential/private-path findings. Final local checks: 25 v2 tests, 61 v1 tests, 79 evidence checksums and 384 exact replays pass.
+- Published only research/upstream-repair-v2; draft PR: https://github.com/victorcao1104/Goal-Aware-Capability-Reconciliation-and-Targeted-Repair-for-LLM-Agent-Skills-A-Controlled-Study/pull/1 . Main and v1.0.0 remain unchanged.
 
