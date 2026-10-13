@@ -54,6 +54,10 @@ class RuntimeTests(unittest.TestCase):
         r=Runtime(c);r.step(action("read","a",resource="mixed"));r.step(action("project","b",["a"],path="/0"))
         r.step(action("send",inputs=["b"],resource="approved"))
         self.assertEqual(r.sends["approved"],{"n":1})
+    def test_export_escapes_json_pointer_keys(self):
+        c=config();c["files"]["mixed"]={"data":{"a/b":1,"a":{"b":2}},"labels":{"":"public"}}
+        r=Runtime(c);r.step(action("read","a",resource="mixed"))
+        self.assertEqual(set(r.handles["a"].export()["origins"]),{"/a~1b","/a/b"})
 
 if __name__=="__main__":unittest.main()
 

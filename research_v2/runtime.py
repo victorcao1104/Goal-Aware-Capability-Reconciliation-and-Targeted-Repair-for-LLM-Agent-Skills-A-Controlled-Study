@@ -31,7 +31,9 @@ class Value:
     def sources(self):
         return set().union(*self.origins.values()) if self.origins else set()
     def export(self):
-        return {"data":deepcopy(self.data),"origins":{"/"+"/".join(p):sorted(s) for p,s in self.origins.items()}}
+        return {"data":deepcopy(self.data),"origins":{
+            ("/"+"/".join(x.replace("~","~0").replace("/","~1") for x in p) if p else ""):sorted(s)
+            for p,s in self.origins.items()}}
 
 def opaque(data, inputs):
     sources=set().union(*(v.sources for v in inputs))

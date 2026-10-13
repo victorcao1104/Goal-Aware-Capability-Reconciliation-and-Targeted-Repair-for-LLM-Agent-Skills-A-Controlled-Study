@@ -44,3 +44,9 @@ jobs:
       - name: Recompute and compare all published summary fields and tables
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m scripts.reproduce --output "${{ runner.temp }}/gcr-reproduced"
+      - name: Upstream repair v2 tests
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m unittest discover -s tests_v2
+      - name: Replay v2 mechanism pilot without an API key
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v2.reproduce

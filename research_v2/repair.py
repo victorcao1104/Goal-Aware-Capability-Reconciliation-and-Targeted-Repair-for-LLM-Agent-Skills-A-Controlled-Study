@@ -1,7 +1,8 @@
 """Shared bounded candidate evaluation. Graph data never supplies authority."""
 from copy import deepcopy
+from itertools import islice,product
 from .runtime import Runtime,Rejected
-from .goals import public_loss
+from .goals import public_loss,value_satisfies
 from .graph import dependency_index
 from .fixtures import a
 
@@ -84,9 +85,15 @@ def seeds(case,graph=False,limit=MAX_CANDIDATES,shuffle=False):
     return plans if limit is None else plans[:limit]
 
 def handle_plans(runtime,goals):
-    plans=[]
-    for handle in runtime.handles:
-        plan=[a(g["effect"],inputs=[handle],resource=g["resource"]) for g in goals]
-        plans.append(plan)
-    return plans[:MAX_CANDIDATES]
+    # Inspect all existing handles; the simulation budget does not arbitrarily
+    # truncate this cheap index lookup. Already satisfied goals need no rewrite.
+    choices=[]
+    for g in goals:
+        if public_loss(runtime,[g])==0:continue
+        allowed=set(runtime.policy["sinks"].get(g["resource"],[]))-set(runtime.policy.get("deny_labels",[]))
+        eligible=[a(g["effect"],inputs=[handle],resource=g["resource"])
+                  for handle,value in runtime.handles.items()
+                  if value.sources and value.sources<=allowed and value_satisfies(value.data,g)]
+        choices.append(eligible)
+    return [list(plan) for plan in islice(product(*choices),MAX_CANDIDATES)] if choices else []
 

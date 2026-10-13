@@ -2,7 +2,7 @@ import json
 import unittest
 from research_v2.fixtures import make_cases, public_case
 from research_v2.runtime import Runtime, Rejected
-from research_v2.repair import prefix, repair, seeds
+from research_v2.repair import prefix, repair, seeds, handle_plans
 from research_v2.graph import dependency_index
 from research_v2.oracle import evaluate
 
@@ -44,5 +44,11 @@ class RepairTests(unittest.TestCase):
         for c in make_cases():
             plain=seeds(c,False,limit=None);graph=seeds(c,True,limit=None)
             self.assertEqual({json.dumps(p,sort_keys=True) for p in plain},{json.dumps(p,sort_keys=True) for p in graph})
+    def test_handle_baseline_searches_all_existing_handles(self):
+        for c in make_cases():
+            if c["variant"]!="unauthorized":continue
+            r,_=prefix(c);plans=handle_plans(r,c["goals"])
+            result=repair(r,plans,c["goals"])
+            self.assertTrue(evaluate(c,result["runtime"])["joint"],c["id"])
 
 if __name__=="__main__":unittest.main()
