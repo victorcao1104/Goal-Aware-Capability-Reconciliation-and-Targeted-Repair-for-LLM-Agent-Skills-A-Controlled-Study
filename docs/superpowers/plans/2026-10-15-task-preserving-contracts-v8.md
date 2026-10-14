@@ -25,21 +25,20 @@
 ### Task 1: Finite fixtures and contract gates
 Files: research_v8/fixtures.py, engine.py; tests_v8/test_core.py.
 Interfaces: tasks(stage), variants(task), oracle(task), reachable(task, policy, goals), gate(method, task, contract, event, proposal).
-- [ ] Write/run tests for alternatives, dependencies, counts, revocation, malicious narrowing, and valid narrowing.
-- [ ] Implement finite exhaustive search and independent subset certificates.
-- [ ] Verify all fixture controls and existing tests. Expected: pass.
+- [x] Write/run tests for alternatives, dependencies, counts, revocation, malicious narrowing, and valid narrowing.
+- [x] Implement finite exhaustive search and independent subset certificates.
+- [x] Verify all fixture controls and existing tests. Expected: pass.
 
 ### Task 2: Matched model protocol and durable evidence
 Files: research_v8/model.py, api.py, run.py, reproduce.py; tests_v8/test_protocol.py.
 Interfaces: spec/request_key compatible with prior request-record shape; stage results isolated.
-- [ ] Test no hidden scoring labels in requests, request bounds, record replay/tampering, and go/no-go rule.
-- [ ] Implement source freeze, committed-source guard, serial budget settlement, and stage-safe resume.
-- [ ] Freeze both stages before pilot; commit and verify. Expected: <=1 / <=5 conservative envelopes.
+- [x] Test no hidden scoring labels in requests, request bounds, record replay/tampering, and go/no-go rule.
+- [x] Implement source freeze, committed-source guard, serial budget settlement, and stage-safe resume.
+- [x] Freeze both stages before pilot; commit and verify. Expected: <=1 / <=5 conservative envelopes.
 
 ### Task 3: Measurement and delivery
 Files: research_v8/results/, report/, README.md; docs/progress/v8.md; CI workflow.
-- [ ] Run pilot on Mini, Luna none/low; apply fixed gate mechanically.
-- [ ] Run held-out stage only if gate passes; no prompt/sample change after measurement.
-- [ ] Independently review complete branch; resolve material findings without altering frozen measurements.
+- [x] Run pilot on Mini, Luna none/low; apply fixed gate mechanically.
+- [x] Evaluate conditional held-out stage: gate failed, so no formal calls; no prompt/sample change.
+- [x] Independently review complete branch; resolve material findings without altering frozen measurements.
 - [ ] Offline replay, full tests, secret scan, package and publish authorized research branch.
-

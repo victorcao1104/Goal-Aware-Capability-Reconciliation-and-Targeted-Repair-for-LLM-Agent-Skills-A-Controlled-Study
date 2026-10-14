@@ -1,5 +1,7 @@
 # 目标感知权限协调与定向修复：LLM Agent Skills 受控研究
 
+**V8 预实验已完成：** [中文结果](research_v8/report/findings.zh.md) · [逐例证据](research_v8/report/case-study.md) · [完整表格与复现](research_v8/README.md)。Mini 在正确初始合同条件下发生2/6新增任务破坏，但集中于一个结构；两个Luna设置均0/6。未达到事先冻结的两结构门槛，正式测量未展开。固定合同与任务可行性检查均挡住已观察失败，不能宣称新方法优于最强简单基线。90次请求均有效，本轮USD0.015298550，累计USD2.426996075/20。
+
 **V7 已完成：**[中文结果](research_v7/report/findings.zh.md) · [完整表格](research_v7/report/findings.md) · [逐例证据](research_v7/report/case-study.md) · [复现指南](research_v7/README.md)。新场景区分“四处出口修复”和“两处共享上游修复”。完整图未提高整体安全完成率；Luna low在危险样本上最优修复为图7/8、无图6/8，但图误修复了一次真实授权对照。确定性图和无图选择完全相同。本轮408次请求、504条方法结果均保留，包含一次未完成响应。本轮USD0.287430100，累计USD2.411697525/20。旧论文和旧实验保持原样。
 
 **最新 v6b 已完成：** [中文结论](research_v6b/report/findings.zh.md) · [完整对照](research_v6b/report/findings.md) · [全部样本](research_v6b/report/candidate-catalog.md) · [离线复现](research_v6b/README.md)。GPT-4.1 Mini 在 16 个攻击配对中新增 12 次越权许可，两个 Luna 设置均为 0。隔离权限生成消除了这组 Mini 模拟越权，但显式图没有额外总体收益；隔离也未消除过度拒绝权限的问题。累计保守费用 **$2.124267425 / $20**。v1 论文保持冻结，后续实验证据分别保存。
