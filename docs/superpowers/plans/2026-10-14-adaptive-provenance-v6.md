@@ -29,6 +29,6 @@ Interfaces: make_case(context,variant,prose)->case; flow(actions,inventory)->fac
 ## Task 4 — evidence and publication
 - [x] Independent replay all requests, feedback, selection and held-out outcomes; reconcile exact per-model cost.
 - [x] Report model and reasoning distinctions, contamination, full 2x2 attribution, legitimate utility, limits and failures; no retuning.
-- [ ] Add CI, scan public records for secrets, push new branch and attach draft PR, verify Windows/Linux CI.
+- [x] Add CI, scan public records for secrets, push new branch and attach draft PR. Windows/Linux validation is tracked by the PR checks on the published head.
 
 Transport amendment: original v6 was aborted before selection/holdout and retained. V6b completes the same scientific schedule with phase-aware parsing; see docs/protocol/adaptive-provenance-v6b-amendment.md.

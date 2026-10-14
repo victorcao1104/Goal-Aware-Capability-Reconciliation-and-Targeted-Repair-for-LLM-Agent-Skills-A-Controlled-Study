@@ -174,4 +174,3 @@ def main():
             target.mkdir(parents=True,exist_ok=True);path.write_bytes(value.encode())
     print('V6 reports verified' if args.verify else 'V6 reports written')
 if __name__=='__main__':main()
-
