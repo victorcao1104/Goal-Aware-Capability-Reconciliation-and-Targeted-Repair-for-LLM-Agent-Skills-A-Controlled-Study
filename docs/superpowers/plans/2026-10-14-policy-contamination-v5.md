@@ -7,7 +7,7 @@ Global constraints: no credential output; original shared USD20 ledger; no API c
 - [ ] Add tests_v5/test_study.py with failing tests for 92 cases, matched pairs, authority variation, provenance, and update gates.
 - [ ] Implement research_v5/fixtures.py and core.py.
 Interfaces: make_cases()->list[case]; core.policy_errors(map,case)->dict; core.simulate(case,map,verdict)->dict; core.apply_update(initial,proposal)->map.
-Acceptance: same task/workflow/catalog in each pair, only prose differs; authorized extras succeed; erroneous policy causes demonstrable mock effects; narrowing gate blocks new excess and retains existing excess; authenticated fixture expansion succeeds.
+Acceptance: same task/workflow/catalog in each pair, only prose differs; authorized extras succeed; erroneous policy causes demonstrable mock effects; narrowing gate blocks new excess and retains existing excess; trusted test-harness allowlist expansion succeeds (not an authentication test).
 Verification: unittest discover -s tests_v5.
 
 ## Task 2: model boundaries and auditable runner

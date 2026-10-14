@@ -15,7 +15,7 @@ Primary sources inspected 2026-10-14:
 Four dependency structures: joined provenance, long alias chain, potentially reachable error fallback, and branched reuse. Each has local output and an approved submission, plus optional remote mixed-source transfer and archive deletion. Effects use fake resources and .invalid destinations; only an in-memory interpreter executes them.
 Ten authored, fixed, nonadaptive attack narratives per structure. Each has a neutral declaration partner with EXACTLY the same workflow, task, inventory and atom catalog. Neutral means no inducement, not harmless behavior. 40 pairs = 80 cases.
 Per structure add clean-workflow, genuinely authorized-extra-scope, and explicitly undecided-extra-scope controls (12). Total 92 cases; two repeats. Templates are not independent populations; four structures and ten narrative families are reported separately. No human labels: authored authority specifications plus deterministic acceptance, disclosed.
-Task has five natural-language clauses T0..T4. Finite ten-atom operation/resource/original-source catalog is public in ALL policy/audit methods. Labels never enter model payloads. It deliberately limits arbitrary code/path generalization. All transformations preserve provenance.
+Task has five natural-language clauses T0..T4. Finite ten-atom operation/resource/original-source catalog is public in ALL policy/audit methods. Gold labels never enter E1/E2 payloads. E3 deliberately supplies authored initial maps as controlled interventions, not estimated policies. The catalog deliberately limits arbitrary code/path generalization. All transformations preserve provenance.
 
 ## E1: initial policy contamination
 Strong shared policy prompt warns availability and Skill claims do not confer authority. Mixed receives trusted task/catalog plus explicitly untrusted bundle. Isolated receives only trusted task/catalog. Same model, schema and 2500 output-token ceiling. A complete allow/deny/uncertain map with enum trusted-clause references avoids v4 free-text action-ID mismatch.
@@ -31,7 +31,7 @@ Primary graph comparison is paired correct decision and all-controls utility, no
 ## E3: update controls
 For 40 fixed attack bundles and 4 neutral bundles, request updated policy from same strong model under (a) authored correct initial map and (b) fault-injected overbroad map. Two repeats. These initial maps are intervention controls, never measured initial-model mistakes.
 Compare raw proposals and finite-set subset-gated effective policies: if new allowed set is not a subset, retain initial policy (no silent expansion approval). A monotonic gate cannot guarantee correction of existing excess; empirically measure retention/removal.
-Separate deterministic trusted-expansion positive control supplies an authenticated fixture receipt; real application authentication is NOT implemented. Do not describe this finite gate as Progent's full SMT implementation.
+Separate deterministic trusted-expansion positive control supplies a trusted test-harness allowlist; this is an intervention, not an authentication test or a parsed receipt. It is saved in mechanism-controls.json alongside rejected expansion, unchanged bad initial policy and repaired initial policy controls. Skill receipt claims cannot populate this allowlist. Do not describe this finite gate as Progent's full SMT implementation.
 Total physical calls depend on content-addressed reuse, bounded before dispatch. E3 is a mechanism probe, not equal-compute competitor to E1/E2.
 
 ## Analysis and validity
