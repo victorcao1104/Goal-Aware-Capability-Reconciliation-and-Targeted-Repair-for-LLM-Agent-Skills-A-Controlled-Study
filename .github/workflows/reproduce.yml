@@ -62,3 +62,9 @@ jobs:
       - name: Verify prepared v4 fixtures (not model results)
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m research_v4.reproduce --prepared
+      - name: Replay all measured v4 components and trajectories
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v4.reproduce
+      - name: Verify v4 reporting diagnostics and figure hashes
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m scripts.report_v4 --verify

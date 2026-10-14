@@ -1,6 +1,6 @@
 # 目标感知权限协调与定向修复：LLM Agent Skills 受控研究
 
-**v4 已完成实验准备，尚未运行模型实验。** [设计与复现说明](research_v4/README.md) · [冻结协议](docs/protocol/authority-audit-v4.md)。48 个编写样本用于分别检验权限生成污染、扫描遗漏和图表示的额外收益；保留同信息无图对照及任务合同＋运行时追踪基线。样本不代表已经骗过模型，累计费用估算仍为 US$1.257365875 / US$20。
+**v4 已完成实测。** [中文结论](docs/v4-findings.zh.md) · [完整报告](research_v4/RESULTS.md) · [离线复现](research_v4/README.md)。480 条方法轨迹、426 次实际模型请求；两种权限生成方式均未被样本诱导扩权，未建立稳定的图收益，证据字段格式错误明显影响主要指标。新增费用估算 $0.1778645，累计 **$1.435230375／$20**。
 
 作者：Victor Cao，University of Auckland，Faculty of Science。
 

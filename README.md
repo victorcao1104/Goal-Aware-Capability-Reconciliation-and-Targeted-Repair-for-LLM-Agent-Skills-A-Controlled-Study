@@ -2,7 +2,7 @@
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
 
-**Research branch v4 — prepared, not measured:** [Design and reproduction](research_v4/README.md) · [Protocol](docs/protocol/authority-audit-v4.md). Separates untrusted-Skill influence on contracts from behavior extraction and graph representation. Includes 48 authored cases, four matched audit arms and a task-only runtime baseline. No v4 model results or demonstrated attack successes yet; cumulative usage remains **US$1.257365875 / US$20**.
+**Research branch v4 — measured:** [Findings (中文)](docs/v4-findings.zh.md) · [Recorded results](research_v4/RESULTS.md) · [Offline replay](research_v4/README.md). All 480 trajectories completed with 426 unique gpt-6-luna requests. Neither contract condition produced excess permissions on the authored attacks. Explicit graphs showed no robust benefit; audit evidence-interface failures materially affected the primary metric. Cumulative estimated usage: **US$1.435230375 / US$20**.
 
 **Research branch v3:** [Findings (中文)](docs/v3-findings.zh.md) · [Measured results](research_v3/RESULTS.md) · [Offline replay](research_v3/README.md). Multi-site repair still yielded 72/72 attack success for all three equally capable planners. Correct graphs saved three requests versus no graph but cost 0.78% more. Cumulative estimated usage: **US$1.257365875 / US$20**. The original paper and v1/v2 scientific records remain preserved.
 
