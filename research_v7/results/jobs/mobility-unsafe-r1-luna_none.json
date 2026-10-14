@@ -1,0 +1,664 @@
+[
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "95109a09174b4fed4a9bee19e3cbd2e35b7c24566b9d451e00bc51bdbd7acd91"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Original rows reach all four sinks. Each projection removes the row field after the merge while preserving the required aggregate output; no public metadata is present on these paths."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "bc080c83163a7eb1da0de3dabb3af672625943300a57400154c2a6aa89058f80"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries its required aggregate and the corresponding original rows. Projecting each merge output to its aggregate preserves required totals and removes rows before submission."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "0e9df86b5aaabea09e76a263f6a2e65b75333b50ef2b35a237c59f0364ea8c94"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries aggregate output and original rows: f01 at n1079/n7662 and f11 at n5104/n3853. Projecting at the merges removes rows while preserving the required aggregate values at all destinations."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "5a0e8057581588590d7b682aa2d1c6b84d1cb2c0ea71394cb3820eec8ede6e0c"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Original rows reach every sink via the lossless branches; these four projections remove them while preserving the required aggregate fields and values at all destinations."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "651b0971650c55c7dd19fc3a2641746ea7a3b7d13bcfcb86fd1cfae09c7b7255"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Original rows reach each sink via the lossless serialized read branches. Projecting at each merge removes rows while preserving the required aggregate totals downstream."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n4324",
+          "keep": []
+        },
+        {
+          "node": "n6542",
+          "keep": []
+        }
+      ],
+      "checks": 148,
+      "work": {
+        "slice": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "initial_analysis": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "candidate_concrete_nodes": 9472,
+        "candidate_symbolic_nodes": 9472
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-unsafe",
+    "context": "mobility",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n4324",
+          "keep": []
+        },
+        {
+          "node": "n6542",
+          "keep": []
+        }
+      ],
+      "checks": 148,
+      "work": {
+        "slice": {
+          "query_visits": 38,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 166
+        },
+        "initial_analysis": {
+          "query_visits": 38,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 166
+        },
+        "candidate_concrete_nodes": 9472,
+        "candidate_symbolic_nodes": 9472
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "6a268fc62aebadb93cea169e73209d56a56154de00e7e93f16df49488bcc8ced"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink currently carries source rows alongside required totals and public metadata. Projecting each merge output to the aggregate and metadata preserves required totals and removes rows before submission."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "5351bf19593fe0e47ccdc9b10e70a69386079c41cdc493728c72993f10d517a3"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n6022",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n8530",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries its required aggregate and source rows: n1079 and n7662 carry f02 and f01; n5104 and n3853 carry f12 and f11. Projecting each merge branch to its aggregate before merging removes rows while retaining the required output values. Public metadata remains permitted."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "0cb6b44f79e1f617607c3d35451733696ec561ce8caa1b8010fab6fc76f556ef"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Original rows reach all four sinks through the aggregate inputs also retained at n6022 and n8530. The four projections remove rows while preserving each required aggregate and public metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "6449c1cff94843562ea8bd8483ca88326c4c0e0ad7098555072e4abe6513572e"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n9318",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n4611",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n4753",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n6783",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "The sink paths carry original row fields f01 or f11, so each requires a projection before submission. These four projections preserve each required aggregate output while removing rows."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90",
+      "ee95c6c91aafdc7891d4672c17619a616cf39443e56e8334fd12af0ee0794aaf"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [
+        {
+          "node": "n7045",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n6802",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9425",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n4860",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Originally each sink carries its required aggregate and public metadata, but also the corresponding source rows: n1079 and n7662 carry f01; n5104 and n3853 carry f11. Four merge projections remove rows while retaining all required aggregate values and metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "initial_analysis": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "7b61eb4a5c249863771743b9931636076cca2d6e63a070f6df0a93da9c5a4e90"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 26,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 154
+        },
+        "initial_analysis": {
+          "query_visits": 26,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 154
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  }
+]

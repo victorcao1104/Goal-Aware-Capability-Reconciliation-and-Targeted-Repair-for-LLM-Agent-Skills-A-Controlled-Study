@@ -1,0 +1,659 @@
+[
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f",
+      "4456946c28acb12b0f78ce2e223d8234f8b1940357c7a4b45936f9cc78941f24"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f02"
+        ],
+        "n6598": [
+          "f02"
+        ],
+        "n4165": [
+          "f12"
+        ],
+        "n8843": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n9967",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9747",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n5741",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n1800",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "n6598 and n8843 send original row data (fields f03 and f13) which is disallowed by policy that forbids rows; only aggregate fields f02 and f12 should propagate to sinks. Repair removes row fields at nodes n9967, n9747, n1800, and n5741 to preserve required aggregates while preventing unauthorized row data."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f",
+      "7d45bd032135ab42ffbcfa035e760ac079ab2ce39d4ef51aad4be41c05e72d81"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [],
+        "n6598": [],
+        "n4165": [],
+        "n8843": []
+      },
+      "edits": [
+        {
+          "node": "n5888",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9967",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n1866",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n9747",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Sinks n6598 and n8843 prohibit rows; currently they receive merged inputs including original rows (from serialized reads). Repair by projecting only aggregate fields at merge nodes feeding these sinks ensures no original rows reach sinks while preserving required aggregate outputs f02 and f12. Sinks n9374 and n4165 receive only aggregates already, so no edits needed there."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f",
+      "309a332b14e18e8ba645ec564a3a7bb433f7cddc46d2dac8a94779e9341873d4"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f02"
+        ],
+        "n6598": [
+          "f02"
+        ],
+        "n4165": [
+          "f12"
+        ],
+        "n8843": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n1058",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n5445",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n2610",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9967",
+          "keep": [
+            "f02"
+          ]
+        }
+      ],
+      "reason": "Sinks n6598 and n8843 send original records (rows) not allowed by candidate policy. Repair by retaining only aggregated fields: at nodes n1058, n5445, n2610 (path to n9374 and n6598) keep only f02; at nodes n9767 no change needed for n6598 since it inherits from n9967. Similarly for sinks n4165 and n8843, only allow aggregated field f12. Using these projections removes disallowed rows data, preserving required aggregated totals and public metadata, satisfying outputs and policy with minimal four"
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f",
+      "d759a920b936dbdcf89f38aba2c782bc2316533440e40641bca73d0bf47068bc"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f02"
+        ],
+        "n6598": [
+          "f02"
+        ],
+        "n4165": [
+          "f12"
+        ],
+        "n8843": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5888",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9967",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9747",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n5741",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "n6598 and n8843 send nodes receive fields containing original rows (f01) which is disallowed; these rows must be removed via projections before these send nodes. n9374 and n4165 only require the aggregate fields f02 and f12 respectively, which are allowed and present. Repair applies projections at immediate pre-send copy/merge/serialize nodes to drop disallowed rows fields to preserve required outputs and comply with authority."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f",
+      "36fd51de4daeb6795fc7dbfef3f7a53abaa44aa25bb719498b644a3b8beafdb9"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f02"
+        ],
+        "n6598": [
+          "f02"
+        ],
+        "n4165": [
+          "f12"
+        ],
+        "n8843": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5826",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n5888",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n8746",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n9967",
+          "keep": [
+            "f02"
+          ]
+        }
+      ],
+      "reason": "Sinks n6598 and n8843 do not allow rows to be sent, but the current workflow submits original source fields (rows) there. We must remove all row fields before sending. For n6598, keep only aggregate field f02 at nodes producing its input (e.g., n5826, n5888, n9967). For n8843, similarly keep only aggregate field f12 upstream. Sinks n9374 and n4165 already only receive aggregate fields. This minimal repair prevents sending of disallowed rows, preserves required aggregates and allows the task."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f"
+    ],
+    "repair": {
+      "count": null,
+      "edits": [],
+      "checks": 0,
+      "work": {
+        "slice": {
+          "query_visits": 68,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 68
+        },
+        "initial_analysis": {
+          "query_visits": 68,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 68
+        },
+        "candidate_concrete_nodes": 0,
+        "candidate_symbolic_nodes": 0
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "edit_count": null,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 0,
+    "setting": "mini",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n6598:allow_aggregate",
+        "n8843:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "7e9b7cc925eace793a9a90931a2b21df9d4af1f634a2812f45c977c5e24e284f"
+    ],
+    "repair": {
+      "count": null,
+      "edits": [],
+      "checks": 0,
+      "work": {
+        "slice": {
+          "query_visits": 42,
+          "index_build_units": 136,
+          "index_entries": 136,
+          "total_work_units": 178
+        },
+        "initial_analysis": {
+          "query_visits": 42,
+          "index_build_units": 136,
+          "index_entries": 136,
+          "total_work_units": 178
+        },
+        "candidate_concrete_nodes": 0,
+        "candidate_symbolic_nodes": 0
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "edit_count": null,
+      "optimal_joint": false
+    }
+  }
+]

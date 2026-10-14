@@ -1,0 +1,530 @@
+[
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e",
+      "b7e67e0299fda47253cad9aae96c70f3e4bdd866b365ec57086819f00f1d13c3"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n8357",
+          "keep": []
+        },
+        {
+          "node": "n4324",
+          "keep": []
+        }
+      ],
+      "reason": "The original workflow sends source rows to all four destinations. Projecting rows out at n8357 and n4324 removes them from both corresponding sink branches while preserving the required aggregate outputs."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": false,
+      "permitted": true,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": false,
+      "edit_count": 2,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e",
+      "8b7d4767816c8c60b993277468a8e7b095a59a9f2b3db9d0b539f85a43afd625"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [],
+      "reason": "Original records and numeric totals are explicitly authorized and required at each corresponding destination; all required fields are preserved."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e",
+      "d4dd43e116b09f00252067c9a767cf73a78792c8e04777390a503c076ba58df0"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [],
+      "reason": "Each destination receives its source’s required aggregate and original records. The task explicitly authorizes both; no unauthorized fields reach the sinks."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e",
+      "c5c05a03984744c098c05b4e91a3e1017f161dfd5bf47ba0a82a99cad395e6e6"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [],
+      "reason": "Both original row fields and their corresponding aggregate totals reach each declared destination; the task explicitly requires and authorizes both."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e",
+      "b84c002627ad7710a4f1e58ec43b56ff1b3452df5a85bf8bec79d24c1199bd27"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [
+          "f01"
+        ],
+        "n7662": [
+          "f01"
+        ],
+        "n5104": [
+          "f11"
+        ],
+        "n3853": [
+          "f11"
+        ]
+      },
+      "edits": [],
+      "reason": "Each sink receives its required aggregate and the corresponding original rows. Both outputs are explicitly authorized for each destination; no changes are needed."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "initial_analysis": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-authorized",
+    "context": "mobility",
+    "variant": "authorized",
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": true
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "66ff86bd08893d3156c9a185f9de18004248c2aed47ab0859fff03dfe05adc1e"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 38,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 166
+        },
+        "initial_analysis": {
+          "query_visits": 38,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 166
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  }
+]

@@ -1,0 +1,677 @@
+[
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977",
+      "53064c96f1a972b65dc9265a238d6e71055f46a19fdbd4570f86b47b5cc5f80e"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5301",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n8394",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n3274",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n5740",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries its source rows alongside the required aggregate and public metadata. Projecting both branches before their merges removes rows while preserving every required output and public field."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977",
+      "31937442dbce8339166f759bb463532d59ec8d5eedaa9713fa6e67dd9e94bcfa"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5301",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n8394",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n3274",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n5740",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink receives the source rows alongside its required total and public metadata. Projecting each merge output to the total and metadata preserves required values while removing rows; the candidate policy disallows rows and aggregates."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977",
+      "0fe398fb12f49c25bd117979c698e2c42953032080afd14162f2b2ce8dc4f09c"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n4257",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9836",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n4937",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n5789",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Original records reach every sink through the merge paths. These four projections remove the row fields while preserving each required aggregate and public metadata; the aggregates meet the candidate policy."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977",
+      "4d716a44e58c83f9028847e91b27154c352015876121bb03b62b04f436fff2cd"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5301",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n8394",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n3274",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n5740",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink initially receives its required aggregate and public metadata, but also source rows via the unaggregated branches. These four projections remove the row fields before the merges while preserving required outputs and metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977",
+      "d3ed2a22c927e6a052909248d72f7257e5891e74a23d597c9bca403183057ead"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [],
+        "n3636": [],
+        "n6962": [],
+        "n1051": []
+      },
+      "edits": [
+        {
+          "node": "n8501",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n1963",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Aggregates remove the original records, but all four sinks currently also receive public metadata. Project it out after the aggregate copies while preserving the required totals; no original row-carrying fields reach the sinks."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": false,
+      "edit_count": 2,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977"
+    ],
+    "repair": {
+      "count": null,
+      "edits": [],
+      "checks": 0,
+      "work": {
+        "slice": {
+          "query_visits": 70,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 70
+        },
+        "initial_analysis": {
+          "query_visits": 70,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 70
+        },
+        "candidate_concrete_nodes": 0,
+        "candidate_symbolic_nodes": 0
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "edit_count": null,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-safe",
+    "context": "logistics",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": false,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": false,
+      "missing": [
+        "n2538:allow_aggregate",
+        "n3636:allow_aggregate",
+        "n6962:allow_aggregate",
+        "n1051:allow_aggregate"
+      ],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "5ca8ee94f1dc4f8b488b3f53de15240464b0a64b797faba790d9188b50a14977"
+    ],
+    "repair": {
+      "count": null,
+      "edits": [],
+      "checks": 0,
+      "work": {
+        "slice": {
+          "query_visits": 26,
+          "index_build_units": 140,
+          "index_entries": 140,
+          "total_work_units": 166
+        },
+        "initial_analysis": {
+          "query_visits": 26,
+          "index_build_units": 140,
+          "index_entries": 140,
+          "total_work_units": 166
+        },
+        "candidate_concrete_nodes": 0,
+        "candidate_symbolic_nodes": 0
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "edit_count": null,
+      "optimal_joint": false
+    }
+  }
+]
