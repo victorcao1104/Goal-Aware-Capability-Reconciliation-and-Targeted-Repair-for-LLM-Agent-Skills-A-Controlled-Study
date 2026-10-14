@@ -14,3 +14,5 @@ Pre-flight: Task 2 requests consumed by Task 3 frozen replay and Task 4 reportin
 Ruling: native managed-worktree creation returned Not a git repository for the parent mirror. Use clean nested checkout on new research/policy-contamination-v5 branch; prior branch preserved. Cost if wrong: less concurrent-checkout isolation; no concurrent writers authorized.
 Ruling: concentrate on initial contamination, graph attribution and update controls; do not build a deliberately authority-laundering synthetic-task strawman. Synthetic task generation alone does not demonstrate a security failure. Cost: no empirical claims about that pipeline.
 Ruling: AuthBench prevents claiming novelty for task-to-policy generation itself. Claim only bounded controlled causal study. Cost: narrower contribution.
+
+Task 4: implementation and publication complete — GitHub draft PR #4 on research/policy-contamination-v5; 139 tests, complete offline replay and report verification pass locally. Windows/Linux remote CI run 38523303174 started; final response will report its observed status. No deferred code-review findings. Original paper remains frozen; v5 is a candid experimental supplement.
