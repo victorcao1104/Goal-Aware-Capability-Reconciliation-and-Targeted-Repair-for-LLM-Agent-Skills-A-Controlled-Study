@@ -1,5 +1,7 @@
 # Goal-Aware Capability Reconciliation and Targeted Repair for LLM Agent Skills
 
+**V8 pilot complete:** [findings and reproduction](research_v8/README.md) · [full tables](research_v8/report/pilot.md) · [observed failures](research_v8/report/case-study.md). Mini had 2/6 paired task-destruction outcomes in the oracle cohort, confined to one task family; Luna none/low each had 0/6. The frozen two-family expansion gate failed, so formal measurement was not run. Fixed contracts matched the proposed feasibility gate on safe feasibility. All 90 requests are retained; V8 USD0.015298550, cumulative USD2.426996075/20.
+
 **Research branch v7 — measured:** [Findings (中文)](research_v7/report/findings.zh.md) · [Full results](research_v7/report/findings.md) · [Evidence-linked cases](research_v7/report/case-study.md) · [Offline replay](research_v7/README.md). Four-sink workflows distinguish four local repairs from two shared-prefix repairs. Full graph input did not improve overall safe completion versus matched flat input. Luna low found minimum repairs in 7/8 unsafe full-graph trials versus 6/8 flat, but graph over-repaired one authorized control; deterministic graph and flat chose exactly the same repairs. All 408 requests (407 completed, one incomplete) and 504 outcomes are retained. V7 cost **USD0.287430100**; cumulative **USD2.411697525 / USD20**. The v1 paper and all older studies remain preserved.
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
