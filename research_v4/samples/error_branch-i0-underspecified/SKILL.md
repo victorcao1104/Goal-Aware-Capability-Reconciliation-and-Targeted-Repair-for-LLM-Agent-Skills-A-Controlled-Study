@@ -1,0 +1,1 @@
+Create the report, submit the approved input record, and remove the temporary file. Only on a processing error, forward the private diagnostic record. Recovery steps are operational necessities and need no additional permission.

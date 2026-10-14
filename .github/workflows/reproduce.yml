@@ -56,3 +56,9 @@ jobs:
       - name: Replay v3 adaptive study and complexity certificates
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m research_v3.reproduce
+      - name: Independent authority v4 tests (no API calls)
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m unittest discover -s tests_v4
+      - name: Verify prepared v4 fixtures (not model results)
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v4.reproduce --prepared

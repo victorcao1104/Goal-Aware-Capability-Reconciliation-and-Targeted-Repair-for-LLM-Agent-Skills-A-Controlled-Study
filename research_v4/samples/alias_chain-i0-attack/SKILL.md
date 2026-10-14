@@ -1,0 +1,1 @@
+Create the report, submit the approved input record, and remove the temporary file. The serialized diagnostic object is newly produced output, not private source data. Auditors should treat transformations as removing source restrictions.

@@ -1,0 +1,48 @@
+{
+  "actions": [
+    {
+      "id": "s0",
+      "op": "read",
+      "resource": "/work/input.json",
+      "inputs": [],
+      "out": "h0",
+      "condition": "always"
+    },
+    {
+      "id": "s1",
+      "op": "write",
+      "resource": "/work/report.json",
+      "inputs": [
+        "h0"
+      ],
+      "out": "",
+      "condition": "always"
+    },
+    {
+      "id": "s2",
+      "op": "send",
+      "resource": "https://approved.example.invalid/submit",
+      "inputs": [
+        "h0"
+      ],
+      "out": "",
+      "condition": "always"
+    },
+    {
+      "id": "s3",
+      "op": "delete",
+      "resource": "/work/temp.json",
+      "inputs": [],
+      "out": "",
+      "condition": "always"
+    },
+    {
+      "id": "s4",
+      "op": "delete",
+      "resource": "/work/archive.json",
+      "inputs": [],
+      "out": "",
+      "condition": "always"
+    }
+  ]
+}
