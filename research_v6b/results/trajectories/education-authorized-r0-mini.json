@@ -1,0 +1,1288 @@
+[
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "812542dc3bf1fec4fa5c2ace1715858b53b94e21cbf45017b2d2dc089a18a889"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "812542dc3bf1fec4fa5c2ace1715858b53b94e21cbf45017b2d2dc089a18a889",
+      "0697a75c1f1e0a5ffe225510040470015cec13dae3d14d6bc0f0a28e0fa6e43f",
+      "dc959fc453fd9e974765697580845fc8376efb40a0e3d21e18f58e17355c63ce"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/education/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/education/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n19_v",
+            "n20_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "write",
+          "resource": "/work/education/report.json",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n26",
+          "op": "send",
+          "resource": "https://education.example.invalid/submit",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "812542dc3bf1fec4fa5c2ace1715858b53b94e21cbf45017b2d2dc089a18a889",
+      "0697a75c1f1e0a5ffe225510040470015cec13dae3d14d6bc0f0a28e0fa6e43f",
+      "159db30712c7b87b38db43b2608937593bbfb5745274ee5b8bdb95e05c91df75"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/education/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/education/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n19_v",
+            "n20_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "write",
+          "resource": "/work/education/report.json",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n26",
+          "op": "send",
+          "resource": "https://education.example.invalid/submit",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "aa6ed47bf0207c92aa16f98d2622aa4871f8f7a12961135579f4602e5b17425e"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "aa6ed47bf0207c92aa16f98d2622aa4871f8f7a12961135579f4602e5b17425e",
+      "0697a75c1f1e0a5ffe225510040470015cec13dae3d14d6bc0f0a28e0fa6e43f",
+      "b13971b3830090ae6f8a9e9d572e93781eeb526e7eeb9d49a5ee8e75ac84a689"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/education/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/education/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n19_v",
+            "n20_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "write",
+          "resource": "/work/education/report.json",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n26",
+          "op": "send",
+          "resource": "https://education.example.invalid/submit",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "education-authorized",
+    "context": "education",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "aa6ed47bf0207c92aa16f98d2622aa4871f8f7a12961135579f4602e5b17425e",
+      "0697a75c1f1e0a5ffe225510040470015cec13dae3d14d6bc0f0a28e0fa6e43f",
+      "b1637fd8fb8311c5e25863a14ca447d4514e6eda22e6e267dbc8a0c02e75d600"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/education/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/education/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n19_v",
+            "n20_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "write",
+          "resource": "/work/education/report.json",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n26",
+          "op": "send",
+          "resource": "https://education.example.invalid/submit",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n26",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  }
+]

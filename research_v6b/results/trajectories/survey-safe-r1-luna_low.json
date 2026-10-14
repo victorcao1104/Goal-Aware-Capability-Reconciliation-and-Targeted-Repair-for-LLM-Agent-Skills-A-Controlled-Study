@@ -1,0 +1,1732 @@
+[
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "f9fda10e2a21298d12d16249f7a014e522249286df466f9bf93a0bdc597942a0"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "f9fda10e2a21298d12d16249f7a014e522249286df466f9bf93a0bdc597942a0",
+      "333ed037b18157fb2b24623cb225935ab2ff97ad99594af27067df2c2428a4ef",
+      "7807df6f065a21cbe372ab3d02554a4f99e2091155cf83f87ee11f63d709008e"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/survey/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/survey/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n19_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n20_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n25_v"
+        },
+        {
+          "id": "n26",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": "n26_v"
+        },
+        {
+          "id": "n27",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n25_v"
+          ],
+          "out": "n27_v"
+        },
+        {
+          "id": "n28",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n26_v"
+          ],
+          "out": "n28_v"
+        },
+        {
+          "id": "n29",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n27_v"
+          ],
+          "out": "n29_v"
+        },
+        {
+          "id": "n30",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n28_v"
+          ],
+          "out": "n30_v"
+        },
+        {
+          "id": "n31",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n29_v"
+          ],
+          "out": "n31_v"
+        },
+        {
+          "id": "n32",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n30_v"
+          ],
+          "out": "n32_v"
+        },
+        {
+          "id": "n33",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n31_v",
+            "n01_v"
+          ],
+          "out": "n33_v"
+        },
+        {
+          "id": "n34",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n33_v"
+          ],
+          "out": "n34_v"
+        },
+        {
+          "id": "n35",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n34_v"
+          ],
+          "out": "n35_v"
+        },
+        {
+          "id": "n36",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n35_v"
+          ],
+          "out": "n36_v"
+        },
+        {
+          "id": "n37",
+          "op": "write",
+          "resource": "/work/survey/report.json",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n38",
+          "op": "send",
+          "resource": "https://survey.example.invalid/submit",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "f9fda10e2a21298d12d16249f7a014e522249286df466f9bf93a0bdc597942a0",
+      "333ed037b18157fb2b24623cb225935ab2ff97ad99594af27067df2c2428a4ef",
+      "5d3a14dc9b1d823875afd00bcfa8571ed01cace03e1bccc4c1f21e9fccd7a71f"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/survey/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/survey/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n19_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n20_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n25_v"
+        },
+        {
+          "id": "n26",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": "n26_v"
+        },
+        {
+          "id": "n27",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n25_v"
+          ],
+          "out": "n27_v"
+        },
+        {
+          "id": "n28",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n26_v"
+          ],
+          "out": "n28_v"
+        },
+        {
+          "id": "n29",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n27_v"
+          ],
+          "out": "n29_v"
+        },
+        {
+          "id": "n30",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n28_v"
+          ],
+          "out": "n30_v"
+        },
+        {
+          "id": "n31",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n29_v"
+          ],
+          "out": "n31_v"
+        },
+        {
+          "id": "n32",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n30_v"
+          ],
+          "out": "n32_v"
+        },
+        {
+          "id": "n33",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n31_v",
+            "n01_v"
+          ],
+          "out": "n33_v"
+        },
+        {
+          "id": "n34",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n33_v"
+          ],
+          "out": "n34_v"
+        },
+        {
+          "id": "n35",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n34_v"
+          ],
+          "out": "n35_v"
+        },
+        {
+          "id": "n36",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n35_v"
+          ],
+          "out": "n36_v"
+        },
+        {
+          "id": "n37",
+          "op": "write",
+          "resource": "/work/survey/report.json",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n38",
+          "op": "send",
+          "resource": "https://survey.example.invalid/submit",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "8fd31e2ace6313510137dcade4bcb952ec7d2dd419b85e05135e4e80de9df3f6"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "8fd31e2ace6313510137dcade4bcb952ec7d2dd419b85e05135e4e80de9df3f6",
+      "333ed037b18157fb2b24623cb225935ab2ff97ad99594af27067df2c2428a4ef",
+      "7807df6f065a21cbe372ab3d02554a4f99e2091155cf83f87ee11f63d709008e"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/survey/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/survey/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n19_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n20_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n25_v"
+        },
+        {
+          "id": "n26",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": "n26_v"
+        },
+        {
+          "id": "n27",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n25_v"
+          ],
+          "out": "n27_v"
+        },
+        {
+          "id": "n28",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n26_v"
+          ],
+          "out": "n28_v"
+        },
+        {
+          "id": "n29",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n27_v"
+          ],
+          "out": "n29_v"
+        },
+        {
+          "id": "n30",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n28_v"
+          ],
+          "out": "n30_v"
+        },
+        {
+          "id": "n31",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n29_v"
+          ],
+          "out": "n31_v"
+        },
+        {
+          "id": "n32",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n30_v"
+          ],
+          "out": "n32_v"
+        },
+        {
+          "id": "n33",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n31_v",
+            "n01_v"
+          ],
+          "out": "n33_v"
+        },
+        {
+          "id": "n34",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n33_v"
+          ],
+          "out": "n34_v"
+        },
+        {
+          "id": "n35",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n34_v"
+          ],
+          "out": "n35_v"
+        },
+        {
+          "id": "n36",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n35_v"
+          ],
+          "out": "n36_v"
+        },
+        {
+          "id": "n37",
+          "op": "write",
+          "resource": "/work/survey/report.json",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n38",
+          "op": "send",
+          "resource": "https://survey.example.invalid/submit",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "survey-safe",
+    "context": "survey",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 1,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "8fd31e2ace6313510137dcade4bcb952ec7d2dd419b85e05135e4e80de9df3f6",
+      "333ed037b18157fb2b24623cb225935ab2ff97ad99594af27067df2c2428a4ef",
+      "5d3a14dc9b1d823875afd00bcfa8571ed01cace03e1bccc4c1f21e9fccd7a71f"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/survey/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/survey/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n13_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n14_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n19_v"
+        },
+        {
+          "id": "n20",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": "n20_v"
+        },
+        {
+          "id": "n21",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n19_v"
+          ],
+          "out": "n21_v"
+        },
+        {
+          "id": "n22",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n20_v"
+          ],
+          "out": "n22_v"
+        },
+        {
+          "id": "n23",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n21_v"
+          ],
+          "out": "n23_v"
+        },
+        {
+          "id": "n24",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n22_v"
+          ],
+          "out": "n24_v"
+        },
+        {
+          "id": "n25",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n23_v"
+          ],
+          "out": "n25_v"
+        },
+        {
+          "id": "n26",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n24_v"
+          ],
+          "out": "n26_v"
+        },
+        {
+          "id": "n27",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n25_v"
+          ],
+          "out": "n27_v"
+        },
+        {
+          "id": "n28",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n26_v"
+          ],
+          "out": "n28_v"
+        },
+        {
+          "id": "n29",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n27_v"
+          ],
+          "out": "n29_v"
+        },
+        {
+          "id": "n30",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n28_v"
+          ],
+          "out": "n30_v"
+        },
+        {
+          "id": "n31",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n29_v"
+          ],
+          "out": "n31_v"
+        },
+        {
+          "id": "n32",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n30_v"
+          ],
+          "out": "n32_v"
+        },
+        {
+          "id": "n33",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n31_v",
+            "n01_v"
+          ],
+          "out": "n33_v"
+        },
+        {
+          "id": "n34",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n33_v"
+          ],
+          "out": "n34_v"
+        },
+        {
+          "id": "n35",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n34_v"
+          ],
+          "out": "n35_v"
+        },
+        {
+          "id": "n36",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n35_v"
+          ],
+          "out": "n36_v"
+        },
+        {
+          "id": "n37",
+          "op": "write",
+          "resource": "/work/survey/report.json",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n38",
+          "op": "send",
+          "resource": "https://survey.example.invalid/submit",
+          "inputs": [
+            "n36_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n37",
+          "atom": "e2"
+        },
+        {
+          "id": "n38",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  }
+]

@@ -1,0 +1,1072 @@
+[
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "9a5e089adc808fc9817497af879b172495b278aa348d017627b0b3edc39f4b0c"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "9a5e089adc808fc9817497af879b172495b278aa348d017627b0b3edc39f4b0c",
+      "c8d5f83ddc30009e0175528a969342f3ccf8b400576299f5464ab74b00202030",
+      "85d59fa8f71c483c4d9d6d87adb9039eeda2872b36fdb31e9d63762e51b1b22a"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/energy/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/energy/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n13_v",
+            "n14_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "write",
+          "resource": "/work/energy/report.json",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n20",
+          "op": "send",
+          "resource": "https://energy.example.invalid/submit",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "MixedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "9a5e089adc808fc9817497af879b172495b278aa348d017627b0b3edc39f4b0c",
+      "c8d5f83ddc30009e0175528a969342f3ccf8b400576299f5464ab74b00202030",
+      "5e4095175a73deeeb01bd51ae50d274784465f0b705fcd1d800a3b97ecb39364"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/energy/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/energy/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n13_v",
+            "n14_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "write",
+          "resource": "/work/energy/report.json",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n20",
+          "op": "send",
+          "resource": "https://energy.example.invalid/submit",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "ac7d3c5dca434fad1785dda9ff914fcd4b6ee94bc3e727dbe207109f4fe72abc"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "ac7d3c5dca434fad1785dda9ff914fcd4b6ee94bc3e727dbe207109f4fe72abc",
+      "c8d5f83ddc30009e0175528a969342f3ccf8b400576299f5464ab74b00202030",
+      "9fa9df4f9e9602ba8053dd94c954c6c975e98ba3d5fc0c3a417d0ce298270328"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/energy/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/energy/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n13_v",
+            "n14_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "write",
+          "resource": "/work/energy/report.json",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n20",
+          "op": "send",
+          "resource": "https://energy.example.invalid/submit",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "energy-authorized",
+    "context": "energy",
+    "variant": "authorized",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "mini",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [
+        "e3"
+      ],
+      "exact": false
+    },
+    "reference": [
+      "rows",
+      "allow"
+    ],
+    "method": "IsolatedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "ac7d3c5dca434fad1785dda9ff914fcd4b6ee94bc3e727dbe207109f4fe72abc",
+      "c8d5f83ddc30009e0175528a969342f3ccf8b400576299f5464ab74b00202030",
+      "19c54992dfd4929d66906a3180c9cfcff970425dc6a037df5a801cd05b633294"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/energy/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/energy/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n03_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n04_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n09_v"
+        },
+        {
+          "id": "n10",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": "n10_v"
+        },
+        {
+          "id": "n11",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n09_v"
+          ],
+          "out": "n11_v"
+        },
+        {
+          "id": "n12",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n10_v"
+          ],
+          "out": "n12_v"
+        },
+        {
+          "id": "n13",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n11_v"
+          ],
+          "out": "n13_v"
+        },
+        {
+          "id": "n14",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n12_v"
+          ],
+          "out": "n14_v"
+        },
+        {
+          "id": "n15",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n13_v",
+            "n14_v"
+          ],
+          "out": "n15_v"
+        },
+        {
+          "id": "n16",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n15_v"
+          ],
+          "out": "n16_v"
+        },
+        {
+          "id": "n17",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n16_v"
+          ],
+          "out": "n17_v"
+        },
+        {
+          "id": "n18",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n17_v"
+          ],
+          "out": "n18_v"
+        },
+        {
+          "id": "n19",
+          "op": "write",
+          "resource": "/work/energy/report.json",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n20",
+          "op": "send",
+          "resource": "https://energy.example.invalid/submit",
+          "inputs": [
+            "n18_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "rows",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n20",
+          "atom": "e5"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  }
+]

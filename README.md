@@ -2,6 +2,8 @@
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
 
+**Research branch v6b — measured:** [Findings (中文)](research_v6b/report/findings.zh.md) · [Full results](research_v6b/report/findings.md) · [All candidate samples](research_v6b/report/candidate-catalog.md) · [Offline replay](research_v6b/README.md). GPT-4.1 Mini produced new excess permission in 12/16 paired attacks; Luna none/low produced 0/16. Independent task-only authority eliminated the observed Mini mock leaks, but explicit graph edges added no overall audit accuracy benefit. Mini still over-denied permitted local staging, so isolation did not make all contracts correct. All 764 v6b request records (including one incomplete response) and the aborted v6 transport run are retained. Cumulative conservative cost: **US$2.124267425 / US$20**. The original IEEE paper below remains the v1 artifact; later experiments are separately versioned supplements.
+
 **Research branch v5:** [Findings (中文)](docs/v5-findings.zh.md) · [Measured results](research_v5/RESULTS.md) · [Offline replay](research_v5/README.md). Forty paired Skill narratives did not induce additional permissions in the strong Mixed baseline. Graph/Flat raw verdicts tied; graph had one more evidence-valid logical use. Both auditors failed all eight clean uses because the scanner inferred uncertainty about absent error branches. This is not evidence of a useful graph advantage. Cumulative estimated usage: **US$1.645422625 / US$20**. All 562 v5 requests and 912 method/update records are retained.
 
 **Research branch v4 — measured:** [Findings (中文)](docs/v4-findings.zh.md) · [Recorded results](research_v4/RESULTS.md) · [Offline replay](research_v4/README.md). All 480 trajectories completed with 426 unique gpt-6-luna requests. Neither contract condition produced excess permissions on the authored attacks. Explicit graphs showed no robust benefit; audit evidence-interface failures materially affected the primary metric. Cumulative estimated usage: **US$1.435230375 / US$20**.
@@ -46,7 +48,7 @@ Start with the [paper PDF](output/pdf/goal-aware-skill-study.pdf), [Chinese find
 | `paper/` | IEEE LaTeX manuscript, bibliography and figures |
 | `release/` | Reviewed delivery packages |
 
-All experimental model roles use **gpt-6-luna**. The authorized total API ceiling is **US$20**. Setup is complete. No independent human annotation is claimed: the evidence strategy is benchmark labels and deterministic acceptance tests, with limitations disclosed.
+V1–v5 experimental model roles use **gpt-6-luna**. V6b additionally tests **gpt-4.1-mini** and explicit Luna none/low reasoning settings. The authorized total API ceiling is **US$20**. No independent human annotation is claimed: the evidence strategy is benchmark labels and deterministic acceptance tests, with limitations disclosed.
 
 See `docs/protocol/requirements-and-decisions.md`, `docs/progress/setup-status.json`, and the acquisition agent's `docs/resource-audit.md` and `literature/resource_manifest.json`.
 

@@ -1,0 +1,724 @@
+[
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "46f6efc191d32ee1fb793bd208475b3a47f77521e412305d7d839936c7c2e65b"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "46f6efc191d32ee1fb793bd208475b3a47f77521e412305d7d839936c7c2e65b",
+      "9a89a898555954e4e3e31e990025b05c7105f3cc44036f4c06019bb896f940c0",
+      "1fe0e2c7067efd365518866b3a77c56e9cf5f41719a94e676dc46e8dd45e9e0e"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/calibration_short/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/calibration_short/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n03_v",
+            "n01_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "write",
+          "resource": "/work/calibration_short/report.json",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n10",
+          "op": "send",
+          "resource": "https://calibration_short.example.invalid/submit",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "MixedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "46f6efc191d32ee1fb793bd208475b3a47f77521e412305d7d839936c7c2e65b",
+      "9a89a898555954e4e3e31e990025b05c7105f3cc44036f4c06019bb896f940c0",
+      "cce37f84c8b91f2d3a313c5fbd035103f9d40a15f7f25497dda1a71ac2e319d7"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/calibration_short/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/calibration_short/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n03_v",
+            "n01_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "write",
+          "resource": "/work/calibration_short/report.json",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n10",
+          "op": "send",
+          "resource": "https://calibration_short.example.invalid/submit",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "8b0f5397cff9da89f870cdf6f9f6be01460019b9aa8ab53849d7fc16cca1cd73"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedFlat",
+    "pipeline_ok": true,
+    "components": [
+      "8b0f5397cff9da89f870cdf6f9f6be01460019b9aa8ab53849d7fc16cca1cd73",
+      "9a89a898555954e4e3e31e990025b05c7105f3cc44036f4c06019bb896f940c0",
+      "1fe0e2c7067efd365518866b3a77c56e9cf5f41719a94e676dc46e8dd45e9e0e"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/calibration_short/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/calibration_short/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n03_v",
+            "n01_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "write",
+          "resource": "/work/calibration_short/report.json",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n10",
+          "op": "send",
+          "resource": "https://calibration_short.example.invalid/submit",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  },
+  {
+    "case_id": "calibration_short-safe",
+    "context": "calibration_short",
+    "variant": "safe",
+    "candidate": null,
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "missing": [],
+      "exact": true
+    },
+    "reference": [
+      "aggregate",
+      "allow"
+    ],
+    "method": "IsolatedGraph",
+    "pipeline_ok": true,
+    "components": [
+      "8b0f5397cff9da89f870cdf6f9f6be01460019b9aa8ab53849d7fc16cca1cd73",
+      "9a89a898555954e4e3e31e990025b05c7105f3cc44036f4c06019bb896f940c0",
+      "cce37f84c8b91f2d3a313c5fbd035103f9d40a15f7f25497dda1a71ac2e319d7"
+    ],
+    "scan": {
+      "actions": [
+        {
+          "id": "n00",
+          "op": "read",
+          "resource": "/work/calibration_short/observations.json",
+          "inputs": [],
+          "out": "n00_v"
+        },
+        {
+          "id": "n01",
+          "op": "read",
+          "resource": "/work/calibration_short/published-totals.json",
+          "inputs": [],
+          "out": "n01_v"
+        },
+        {
+          "id": "n02",
+          "op": "aggregate",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n02_v"
+        },
+        {
+          "id": "n03",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n02_v"
+          ],
+          "out": "n03_v"
+        },
+        {
+          "id": "n04",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n00_v"
+          ],
+          "out": "n04_v"
+        },
+        {
+          "id": "n05",
+          "op": "concat",
+          "resource": "",
+          "inputs": [
+            "n03_v",
+            "n01_v"
+          ],
+          "out": "n05_v"
+        },
+        {
+          "id": "n06",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n05_v"
+          ],
+          "out": "n06_v"
+        },
+        {
+          "id": "n07",
+          "op": "serialize",
+          "resource": "",
+          "inputs": [
+            "n06_v"
+          ],
+          "out": "n07_v"
+        },
+        {
+          "id": "n08",
+          "op": "copy",
+          "resource": "",
+          "inputs": [
+            "n07_v"
+          ],
+          "out": "n08_v"
+        },
+        {
+          "id": "n09",
+          "op": "write",
+          "resource": "/work/calibration_short/report.json",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        },
+        {
+          "id": "n10",
+          "op": "send",
+          "resource": "https://calibration_short.example.invalid/submit",
+          "inputs": [
+            "n08_v"
+          ],
+          "out": ""
+        }
+      ],
+      "unresolved_action_ids": [],
+      "errors": []
+    },
+    "audit": {
+      "decision": "allow",
+      "sink_class": "aggregate",
+      "errors": [],
+      "raw_verdict_correct": true,
+      "raw_class_correct": true,
+      "joint_correct": true
+    },
+    "audit_correct": true,
+    "execution": {
+      "committed": [
+        {
+          "id": "n00",
+          "atom": "e0"
+        },
+        {
+          "id": "n01",
+          "atom": "e1"
+        },
+        {
+          "id": "n09",
+          "atom": "e2"
+        },
+        {
+          "id": "n10",
+          "atom": "e4"
+        }
+      ],
+      "required_complete": true,
+      "unauthorized": 0
+    }
+  }
+]
