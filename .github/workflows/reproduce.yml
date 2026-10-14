@@ -77,3 +77,12 @@ jobs:
       - name: Verify v5 reports and figure hashes
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m scripts.report_v5 --verify
+      - name: Adaptive provenance v6 and phase-aware v6b tests
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -c "import subprocess, sys; [subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', s], check=True) for s in ['tests_v6', 'tests_v6b']]"
+      - name: Replay v6b and verify the aborted v6 archive
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v6b.reproduce
+      - name: Verify adaptive provenance reports
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m scripts.report_v6 --verify
