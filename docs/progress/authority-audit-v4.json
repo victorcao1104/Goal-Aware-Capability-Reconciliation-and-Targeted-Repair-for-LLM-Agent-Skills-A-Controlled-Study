@@ -1,0 +1,51 @@
+{
+  "status": "PREPARED_NOT_MEASURED",
+  "date": "2026-10-14",
+  "branch": "research/authority-audit-v4",
+  "base_commit": "3b0f80e645c1879375a2063f671dab292a5d557e",
+  "tests": {
+    "v1": 61,
+    "v2": 25,
+    "v3": 14,
+    "v4": 20,
+    "total": 120
+  },
+  "offline_checks": {
+    "v2_evidence_files": 79,
+    "v2_trials": 384,
+    "v3_evidence_files": 550,
+    "v3_trajectories": 324,
+    "v3_role_requests": 220,
+    "v4_authored_cases": 48,
+    "v4_reference_allow": 24,
+    "v4_reference_block": 12,
+    "v4_reference_uncertain": 12
+  },
+  "v4_api_calls": 0,
+  "cumulative_usage_usd": 1.257365875,
+  "cumulative_cap_usd": 20,
+  "review": {
+    "model": "gpt-6-luna",
+    "disposition": "No remaining preparation blocker",
+    "resolved": [
+      "Scan omissions prevent allow without filling omitted behaviors",
+      "Live cache validates original request, private response and ledger",
+      "Metric denominators and per-family missingness explicit"
+    ]
+  },
+  "credential_scan": {
+    "staged_files_scanned": 94,
+    "findings": 0
+  },
+  "limits": [
+    "Authored declarative fixtures; not native Skill execution",
+    "Reference/stub correctness is not a model result",
+    "No independent human annotation",
+    "No conclusion about graph superiority or successful model deception"
+  ],
+  "publication": {
+    "prepared_source_commit": "6660b7c6f9058f3c2c86eb30a7bea96cac57b528",
+    "draft_pr": "https://github.com/victorcao1104/Goal-Aware-Capability-Reconciliation-and-Targeted-Repair-for-LLM-Agent-Skills-A-Controlled-Study/pull/3",
+    "base_branch": "research/dependency-repair-v3"
+  }
+}

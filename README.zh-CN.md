@@ -1,5 +1,7 @@
 # 目标感知权限协调与定向修复：LLM Agent Skills 受控研究
 
+**v4 已完成实测。** [中文结论](docs/v4-findings.zh.md) · [完整报告](research_v4/RESULTS.md) · [离线复现](research_v4/README.md)。480 条方法轨迹、426 次实际模型请求；两种权限生成方式均未被样本诱导扩权，未建立稳定的图收益，证据字段格式错误明显影响主要指标。新增费用估算 $0.1778645，累计 **$1.435230375／$20**。
+
 作者：Victor Cao，University of Auckland，Faculty of Science。
 
 **v3 研究分支：** [复杂场景实际结论](docs/v3-findings.zh.md)及[复现入口](research_v3/README.md)。三组在攻击场景中均为 72/72 成功；有图少三次请求，但贵约 0.78%，仍不能证明图的独特优势。研究累计费用估计 **$1.257365875 / $20**，v1 论文及 v1/v2 科学记录保留。
