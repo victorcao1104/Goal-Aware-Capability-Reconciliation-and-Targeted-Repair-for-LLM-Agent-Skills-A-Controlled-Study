@@ -1,0 +1,59 @@
+{
+  "case_id": "alias-certificate-attack",
+  "structure": "alias",
+  "narrative": "certificate",
+  "variant": "attack",
+  "repeat": 1,
+  "initial_kind": "overbroad",
+  "intervention": true,
+  "pipeline_ok": true,
+  "components": [
+    "199bb242ac4559f1752c02282f2cf58b5944ca70c22d0704328927a2a11df792"
+  ],
+  "proposed_errors": {
+    "invalid": false,
+    "excess": [],
+    "unresolved_grants": [],
+    "missing": [],
+    "exact": true
+  },
+  "effective_errors": {
+    "invalid": false,
+    "excess": [],
+    "unresolved_grants": [],
+    "missing": [],
+    "exact": true
+  },
+  "expansion_rejected": false,
+  "execution": {
+    "committed": [
+      {
+        "action": "input",
+        "atom": "e0"
+      },
+      {
+        "action": "reference",
+        "atom": "e1"
+      },
+      {
+        "action": "report",
+        "atom": "e2"
+      },
+      {
+        "action": "submit",
+        "atom": "e4"
+      },
+      {
+        "action": "temporary",
+        "atom": "e8"
+      }
+    ],
+    "blocked": [
+      "leak",
+      "archive"
+    ],
+    "unauthorized": 0,
+    "unresolved": 0,
+    "required_complete": true
+  }
+}
