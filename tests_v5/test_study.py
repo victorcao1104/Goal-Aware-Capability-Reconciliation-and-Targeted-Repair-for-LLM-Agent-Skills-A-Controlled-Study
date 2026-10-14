@@ -53,4 +53,3 @@ class StudyTests(unittest.TestCase):
         self.assertFalse(simulate(c,{},'allow')['required_complete'])
 
 if __name__=='__main__':unittest.main()
-
