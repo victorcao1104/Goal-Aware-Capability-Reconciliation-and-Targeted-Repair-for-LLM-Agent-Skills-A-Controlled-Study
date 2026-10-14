@@ -13,3 +13,5 @@ Local verification: 14 v3, 25 v2 and 61 v1 tests passed; v2 replay reproduced 38
 Windows full v1 reanalysis first hit the documented deep-path limit in a nested output directory. Re-run uses the shorter parent-workspace `v3-v1-replay` destination. This affects scratch output only. CI extracts the committed source into a short runner path on both Windows and Linux.
 
 Independent gpt-6-luna publication review checked all 324 trajectories, 220 requests, raw-call inventory, token totals, attempts, costs, complexity denominators and both-language claims. One wording correction clarified that feedback fields/mechanism, rather than literal error messages, are shared. No numerical or publication-claim blocker remained.
+
+Published research branch `research/dependency-repair-v3` and draft PR #2, stacked on v2 PR #1: https://github.com/victorcao1104/Goal-Aware-Capability-Reconciliation-and-Targeted-Repair-for-LLM-Agent-Skills-A-Controlled-Study/pull/2 . Main remains unchanged. Windows/Linux CI is configured to replay all three studies; see the PR checks for final status.

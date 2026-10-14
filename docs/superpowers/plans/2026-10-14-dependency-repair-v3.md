@@ -29,7 +29,7 @@ gpt-6-luna; cumulative US$20; no oracle feedback; 2 requests, 4 candidates/reque
 ## Task 3: Evidence and delivery (research_v3/reproduce.py, README.md, RESULTS.md; CI)
 - [x] Run Luna trajectories without exceeding the shared cap; preserve failures.
 - [x] Replay full evidence offline and verify old freezes/tests.
-- [ ] Document positive or null findings with limitations, review claims, push branch and draft PR.
+- [x] Document positive or null findings with limitations, review claims, push branch and draft PR.
 
 ## Ruling
 The user's explicit autonomous continuation and existing key/publication authorization supersede redundant approval handoffs. Implement inline with a fresh reviewer; do not ask the user to reconfirm choices already specified.
