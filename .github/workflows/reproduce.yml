@@ -86,3 +86,12 @@ jobs:
       - name: Verify adaptive provenance reports
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m scripts.report_v6 --verify
+      - name: Verified field-flow v7 tests
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m unittest discover -s tests_v7
+      - name: Replay v7 authority, field flow and repairs
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v7.reproduce
+      - name: Verify v7 reports and figures
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m scripts.report_v7 --verify

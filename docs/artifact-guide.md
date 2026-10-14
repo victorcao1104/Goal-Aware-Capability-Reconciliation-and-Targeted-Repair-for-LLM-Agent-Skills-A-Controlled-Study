@@ -72,3 +72,7 @@ The full local study additionally retains credentials, user coursework, download
 The workflow runs offline reproduction on Linux and Windows with no repository API secrets. GitHub status is execution evidence; the workflow definition by itself is not a claim that a run passed. MacOS uses the same Python command but is not part of that CI matrix.
 
 See `NOTICE.md` for authorship, AI assistance and rights. No broad software or third-party redistribution license has been selected on the author's behalf. The artifact does not claim native Skill-Inject reproduction, independent human annotations, or an incremental goal-graph benefit.
+
+## V7 field-flow supplement
+
+The [v7 guide](../research_v7/README.md) covers the frozen four-sink fixtures, 408 response records, 504 model/baseline outcomes, exact offline reconstruction and report verification. It uses the same pinned Python dependencies; no Docker or API key is needed for replay. All previous studies remain independently reproducible. The original IEEE paper is v1; v7 findings are a separately versioned supplement.

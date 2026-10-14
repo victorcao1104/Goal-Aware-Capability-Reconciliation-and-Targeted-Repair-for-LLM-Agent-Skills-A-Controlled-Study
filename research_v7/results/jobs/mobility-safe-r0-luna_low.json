@@ -1,0 +1,481 @@
+[
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14",
+      "8c4b61aa9bfbed908ba22465cc8f8bdce20395fbd4fc623567d82bde94b64b23"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [],
+      "reason": "All four sinks carry the required aggregate output and public metadata only; no original row fields reach a sink."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14",
+      "8a94740240b0ee4aa89b4036207bf6fca2b2e83241e042116538afc12ddef5d5"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [],
+      "reason": "Each sink receives its required aggregate total and public metadata; no original-record fields reach any sink."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14",
+      "15c8cdbef9e7463400104492ec2e3195f153706b00804ee547abe947241b5444"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [],
+      "reason": "Each sink carries its required aggregate total and public metadata; no original row fields reach any sink."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14",
+      "31c638e59473112616a0fd4469e8193dbc0aa9963dade1f0218fd63dec66ff4f"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [],
+      "reason": "Each source is aggregated before merging with public metadata. The sinks receive the required aggregate field and metadata, with no original row fields."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14",
+      "afd5c65566edf929a0f248c9adec71e0079bf8b10e2c454acc018dee7e94658f"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n1079": [],
+        "n7662": [],
+        "n5104": [],
+        "n3853": []
+      },
+      "edits": [],
+      "reason": "Each source’s rows are consumed by aggregation, which returns only the required total field. Each sink receives its corresponding total and public metadata; no original row field reaches a sink."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "initial_analysis": {
+          "query_visits": 64,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 64
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "mobility-safe",
+    "context": "mobility",
+    "variant": "safe",
+    "repeat": 0,
+    "setting": "luna_low",
+    "policy": {
+      "n1079": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7662": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n5104": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3853": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "c9adb4211c657bcf044bdf60af22f305cdcff709c293f6d4b42ac848af2f2e14"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 26,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 154
+        },
+        "initial_analysis": {
+          "query_visits": 26,
+          "index_build_units": 128,
+          "index_entries": 128,
+          "total_work_units": 154
+        },
+        "candidate_concrete_nodes": 64,
+        "candidate_symbolic_nodes": 64
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 64,
+        "symbolic_nodes": 64
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  }
+]

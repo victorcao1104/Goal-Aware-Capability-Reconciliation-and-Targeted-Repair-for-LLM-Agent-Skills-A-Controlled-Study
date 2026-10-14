@@ -1,0 +1,636 @@
+[
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6",
+      "3deb254dd3ea6022ea12b9b8f7ac320cd33961421631e32b3151277ab1086394"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f01"
+        ],
+        "n6598": [
+          "f01"
+        ],
+        "n4165": [
+          "f11"
+        ],
+        "n8843": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n3093",
+          "keep": [
+            "f03"
+          ]
+        },
+        {
+          "node": "n5330",
+          "keep": [
+            "f03"
+          ]
+        },
+        {
+          "node": "n5575",
+          "keep": [
+            "f13"
+          ]
+        },
+        {
+          "node": "n2473",
+          "keep": [
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries its aggregate plus the corresponding original rows (f01 or f11); the row fields violate the no-submission requirement. These four projections remove the rows while retaining each required aggregate and preserve execution."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6",
+      "1f665f3a34c859e8b8cb6aa852632b3060aa0d95437d9da70dc84960dfd52736"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f02",
+          "f01"
+        ],
+        "n6598": [
+          "f02",
+          "f01"
+        ],
+        "n4165": [
+          "f12",
+          "f11"
+        ],
+        "n8843": [
+          "f12",
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n1058",
+          "keep": [
+            "f03"
+          ]
+        },
+        {
+          "node": "n6769",
+          "keep": [
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink currently carries its required aggregate plus the corresponding original rows. Projecting row-free public metadata at n1058 and n6769 removes the row-carrying branches while preserving required aggregate outputs and metadata; p0 and p1 are not merged into these paths, so retain only the public fields present."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6",
+      "c9e2879c0b516a14c87aaa1a55de702495afed21f69b554f7979c54f5769d4f7"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f01"
+        ],
+        "n6598": [
+          "f01"
+        ],
+        "n4165": [
+          "f11"
+        ],
+        "n8843": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n6895",
+          "keep": []
+        },
+        {
+          "node": "n4383",
+          "keep": []
+        }
+      ],
+      "reason": "The original row fields reach all four sinks through lossless serialization. Remove them on the branches that carry rows, preserving the aggregate branches and required totals."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6",
+      "8eea590366c9a3c5c26d8e6a4fa0ff705ff50e879c8e7bdf29c4f6266bebcb54"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f01"
+        ],
+        "n6598": [
+          "f01"
+        ],
+        "n4165": [
+          "f11"
+        ],
+        "n8843": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n3118",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n1058",
+          "keep": []
+        },
+        {
+          "node": "n9759",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n6769",
+          "keep": []
+        }
+      ],
+      "reason": "All four sinks carry source row fields through lossless serialization; they must be removed while preserving aggregates. These four projections prevent rows entering either merge branch and retain the required aggregate outputs."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6",
+      "2e83dec40ebad29b769ecd253f9480dd354cdea82d71e30214df93d4493e9ecb"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n9374": [
+          "f01"
+        ],
+        "n6598": [
+          "f01"
+        ],
+        "n4165": [
+          "f11"
+        ],
+        "n8843": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5826",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n5888",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n1866",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n9747",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "Original records reach every sink through lossless serialization and merge. These four projections remove the rows while preserving each required aggregate output."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n1058",
+          "keep": []
+        },
+        {
+          "node": "n4383",
+          "keep": []
+        }
+      ],
+      "checks": 39,
+      "work": {
+        "slice": {
+          "query_visits": 68,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 68
+        },
+        "initial_analysis": {
+          "query_visits": 68,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 68
+        },
+        "candidate_concrete_nodes": 2652,
+        "candidate_symbolic_nodes": 2652
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "habitat-unsafe",
+    "context": "habitat",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n9374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6598": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n4165": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n8843": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "6d95d58b98f705164e4302b4a894a9bd49e4d4dfd16799591ae4eb9dc5e0f0c6"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n1058",
+          "keep": []
+        },
+        {
+          "node": "n4383",
+          "keep": []
+        }
+      ],
+      "checks": 39,
+      "work": {
+        "slice": {
+          "query_visits": 42,
+          "index_build_units": 136,
+          "index_entries": 136,
+          "total_work_units": 178
+        },
+        "initial_analysis": {
+          "query_visits": 42,
+          "index_build_units": 136,
+          "index_entries": 136,
+          "total_work_units": 178
+        },
+        "candidate_concrete_nodes": 2652,
+        "candidate_symbolic_nodes": 2652
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 68,
+        "symbolic_nodes": 68
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  }
+]

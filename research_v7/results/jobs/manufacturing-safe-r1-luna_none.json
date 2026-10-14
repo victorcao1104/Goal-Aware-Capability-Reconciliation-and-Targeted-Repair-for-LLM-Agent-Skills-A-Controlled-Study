@@ -1,0 +1,644 @@
+[
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699",
+      "34b0338fb655c6dbaec8fd28827a9d07b3071b9f6023aa4d4df521f35bd5851c"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1931": [
+          "f01"
+        ],
+        "n7374": [
+          "f01"
+        ],
+        "n2067": [
+          "f11"
+        ],
+        "n7321": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n9070",
+          "keep": [
+            "f02"
+          ]
+        }
+      ],
+      "reason": "Both source totals are required at each corresponding destination, but source rows propagate to both first-source sinks. Projecting n9070 to f02 removes those rows from both branches while preserving the required total and public metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 1,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699",
+      "e9cf379d952d15e465e911f6f6e7cc736c43cf44e5c223435a941d506b8bbff5"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1931": [
+          "f01"
+        ],
+        "n7374": [
+          "f01"
+        ],
+        "n2067": [
+          "f11"
+        ],
+        "n7321": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5723",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n3485",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n4377",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n1487",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries source rows alongside its required aggregate and public metadata. Projecting the merged fields removes rows while preserving both required outputs and metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699",
+      "c8a80f3b62c8cb8b27bbadf71ec5bfe3197431e3637c61402a17ca0851ed5580"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1931": [
+          "f01"
+        ],
+        "n7374": [
+          "f01"
+        ],
+        "n2067": [
+          "f11"
+        ],
+        "n7321": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5723",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n3485",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n4377",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n1487",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Each sink originally carries its source rows field (f01 or f11) alongside the required aggregate and public metadata. Projecting at each merge removes rows while preserving required totals and metadata."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699",
+      "5631ec8a960a026404151392bf336411728fa42ee8fab246df4c20981771298b"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1931": [
+          "f01"
+        ],
+        "n7374": [
+          "f01"
+        ],
+        "n2067": [
+          "f11"
+        ],
+        "n7321": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5844",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9542",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n2845",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n2546",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Original row fields reach all four sinks, so remove them at each send input while preserving the required aggregate and public metadata fields."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699",
+      "ea08f0575dbf11f62c160bce205d6a07efe63e69980edf51879947a2e1bdb957"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n1931": [
+          "f01"
+        ],
+        "n7374": [
+          "f01"
+        ],
+        "n2067": [
+          "f11"
+        ],
+        "n7321": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5844",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n9542",
+          "keep": [
+            "f02",
+            "f03"
+          ]
+        },
+        {
+          "node": "n2845",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        },
+        {
+          "node": "n2546",
+          "keep": [
+            "f12",
+            "f13"
+          ]
+        }
+      ],
+      "reason": "Original rows reach every sink through lossless serialization; the requested aggregate and public metadata can be preserved by projecting each sink input to those fields."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 66,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 66
+        },
+        "initial_analysis": {
+          "query_visits": 66,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 66
+        },
+        "candidate_concrete_nodes": 66,
+        "candidate_symbolic_nodes": 66
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "manufacturing-safe",
+    "context": "manufacturing",
+    "variant": "safe",
+    "repeat": 1,
+    "setting": "luna_none",
+    "policy": {
+      "n1931": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7374": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n2067": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n7321": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "584085ac56e7d7bda2cde93ffa0654cb021b6302edfa86a7a55f16ac33cab699"
+    ],
+    "repair": {
+      "count": 0,
+      "edits": [],
+      "checks": 1,
+      "work": {
+        "slice": {
+          "query_visits": 26,
+          "index_build_units": 132,
+          "index_entries": 132,
+          "total_work_units": 158
+        },
+        "initial_analysis": {
+          "query_visits": 26,
+          "index_build_units": 132,
+          "index_entries": 132,
+          "total_work_units": 158
+        },
+        "candidate_concrete_nodes": 66,
+        "candidate_symbolic_nodes": 66
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 66,
+        "symbolic_nodes": 66
+      },
+      "edit_count": 0,
+      "optimal_joint": true
+    }
+  }
+]

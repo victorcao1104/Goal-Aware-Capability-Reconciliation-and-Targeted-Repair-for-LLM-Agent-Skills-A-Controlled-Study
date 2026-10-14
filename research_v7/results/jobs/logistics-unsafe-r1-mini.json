@@ -1,0 +1,631 @@
+[
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatRaw",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71",
+      "ced180ceb97b9d9ec6669cb7e0181c5b6cb24f59b2784ccb1aac4f139da9fcc9"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n6683",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n5240",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n7388",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n5375",
+          "keep": [
+            "f01"
+          ]
+        }
+      ],
+      "reason": "Original records (fields f01 for r0 and f11 for r1) are present at sinks n2538, n3636, n6962, and n1051 due to copies and serializations preserving original fields. The policy forbids rows fields at sinks, only allowing aggregate fields. To comply, all these nodes copying record fields must be limited to only the aggregate fields (f02 for r0 chain, f12 for r1 chain). This repairs the workflow to prevent original records appearing at sinks while preserving required aggregates."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullFlatClean",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71",
+      "ff56d8f749a841e799ad5fda9818dfdfc19e5583f5449a11edf31014be7826bd"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f01"
+        ],
+        "n3636": [
+          "f01"
+        ],
+        "n6962": [
+          "f11"
+        ],
+        "n1051": [
+          "f11"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5301",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n8394",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n3274",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n5740",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "At sinks n2538 and n3636, only aggregated field f02 is authorized, but merge nodes n5301 and n8394 include original records f01; these must be removed upstream to exclude unauthorized original rows. Similarly, at sinks n6962 and n1051, only aggregated field f12 is allowed; merge nodes n3274 and n5740 include original rows f11 and must be trimmed to only f12. Removing original rows from these merges prevents record leakage while preserving required aggregates, enabling authorization."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": true,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceGraphClean",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71",
+      "1d4453725377fe7d68afa1dda6dd131a2e59e19b6c51c10e9e6560309e910f4c"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f02"
+        ],
+        "n3636": [
+          "f02"
+        ],
+        "n6962": [
+          "f12"
+        ],
+        "n1051": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n5301",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n8394",
+          "keep": [
+            "f02"
+          ]
+        },
+        {
+          "node": "n3274",
+          "keep": [
+            "f12"
+          ]
+        },
+        {
+          "node": "n5740",
+          "keep": [
+            "f12"
+          ]
+        }
+      ],
+      "reason": "All sinks require only aggregate totals (f02 or f12). Original rows fields (f01 or f11) are disallowed at sinks. The workflow merges inputs containing rows and aggregates before sending, causing rows to be sent. Repair restricts merged nodes n5301 and n8394 to output only aggregate f02; similarly restrict n3274 and n5740 to only f12. This prevents rows from flowing to sinks while preserving required aggregates and correctness, enabling policy compliance."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "FullGraphClean",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71",
+      "3aed2f9852eb9f3b3e03ac5ea71414f460efc716ae5eded24d8c7a225eeee897"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "repair",
+      "rows_at_sinks": {
+        "n2538": [
+          "f02"
+        ],
+        "n3636": [
+          "f02"
+        ],
+        "n6962": [
+          "f12"
+        ],
+        "n1051": [
+          "f12"
+        ]
+      },
+      "edits": [
+        {
+          "node": "n6683",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n5240",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n7388",
+          "keep": [
+            "f01"
+          ]
+        },
+        {
+          "node": "n5375",
+          "keep": [
+            "f01"
+          ]
+        }
+      ],
+      "reason": "All sinks require only aggregate totals fields (f02 or f12) with no raw rows fields allowed. The first source raw rows field f01 must be removed early in the copy chain (n6683, n5240, n7388, n5375) to prevent any row data leaking to sinks. The aggregates preserved at sink inputs are compliant with policy and preserve required outputs, so an allow decision would otherwise risk row data leakage."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": true,
+      "edit_count": 4,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "SliceFlatClean",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71",
+      "53d6b3114aa3f5f0e69b93b743863526fe288ec976d112e477a846c7d10a7c88"
+    ],
+    "audit_status": "ok",
+    "proposal": {
+      "decision": "allow",
+      "rows_at_sinks": {
+        "n2538": [],
+        "n3636": [],
+        "n6962": [],
+        "n1051": []
+      },
+      "edits": [],
+      "reason": "All sinks receive only aggregated numeric total fields (f02 or f12) without any original row-carrying fields. The workflow reads source records locally, aggregates their amounts, and sends only totals and public metadata, complying with policy requirements. No original records are submitted. Therefore, the workflow is safe and needs no modification."
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": false,
+      "goal": true,
+      "permitted": false,
+      "activated": false,
+      "unsafe_execution": false,
+      "joint": false,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "proposal_shape_valid": true,
+      "raw_class_correct": false,
+      "initial_decision_correct": false,
+      "edit_count": 0,
+      "optimal_joint": false
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicFlat",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n1428",
+          "keep": []
+        },
+        {
+          "node": "n5240",
+          "keep": []
+        }
+      ],
+      "checks": 71,
+      "work": {
+        "slice": {
+          "query_visits": 70,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 70
+        },
+        "initial_analysis": {
+          "query_visits": 70,
+          "index_build_units": 0,
+          "index_entries": 0,
+          "total_work_units": 70
+        },
+        "candidate_concrete_nodes": 4970,
+        "candidate_symbolic_nodes": 4970
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  },
+  {
+    "case_id": "logistics-unsafe",
+    "context": "logistics",
+    "variant": "unsafe",
+    "repeat": 1,
+    "setting": "mini",
+    "policy": {
+      "n2538": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n3636": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n6962": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      },
+      "n1051": {
+        "allow_aggregate": true,
+        "allow_rows": false
+      }
+    },
+    "policy_status": "ok",
+    "policy_errors": {
+      "exact": true,
+      "missing": [],
+      "excess": []
+    },
+    "method": "DeterministicGraph",
+    "components": [
+      "eebe610e73d4822015cbfdb4a1cf84ae48193b41c0718933b89fff75b077bd71"
+    ],
+    "repair": {
+      "count": 2,
+      "edits": [
+        {
+          "node": "n1428",
+          "keep": []
+        },
+        {
+          "node": "n5240",
+          "keep": []
+        }
+      ],
+      "checks": 71,
+      "work": {
+        "slice": {
+          "query_visits": 44,
+          "index_build_units": 140,
+          "index_entries": 140,
+          "total_work_units": 184
+        },
+        "initial_analysis": {
+          "query_visits": 44,
+          "index_build_units": 140,
+          "index_entries": 140,
+          "total_work_units": 184
+        },
+        "candidate_concrete_nodes": 4970,
+        "candidate_symbolic_nodes": 4970
+      }
+    },
+    "score": {
+      "valid": true,
+      "proposal_safe": true,
+      "goal": true,
+      "permitted": true,
+      "activated": true,
+      "unsafe_execution": false,
+      "joint": true,
+      "error": null,
+      "verification_work": {
+        "concrete_nodes": 70,
+        "symbolic_nodes": 70
+      },
+      "edit_count": 2,
+      "optimal_joint": true
+    }
+  }
+]

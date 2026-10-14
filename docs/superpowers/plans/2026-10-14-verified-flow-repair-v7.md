@@ -15,13 +15,13 @@ Prior USD2.124267425; incremental cap USD6; total never exceeds original USD20. 
 - Equal-info nongraph solvers and all failed model calls remain in comparisons.
 
 ## Task 1
-- [ ] RED/GREEN fixtures and independent concrete execution: multi-source, multi-sink, safe/authorized controls.
-- [ ] Sequential and graph field propagation agree; backward slices agree; minimum multi-edit certificates pass.
+- [x] RED/GREEN fixtures and independent concrete execution: multi-source, multi-sink, safe/authorized controls.
+- [x] Sequential and graph field propagation agree; backward slices agree; minimum multi-edit certificates pass.
 ## Task 2
-- [ ] Role schemas, independent authority, matched five arms, budget identity and phase parsing.
-- [ ] Runner, frozen source/fixture manifests, replay and reporting.
+- [x] Role schemas, independent authority, matched five arms, budget identity and phase parsing.
+- [x] Runner, frozen source/fixture manifests, replay and reporting.
 ## Task 3
-- [ ] Fresh preflight review; all tests; freeze/commit; bounded live experiment.
+- [x] Fresh preflight review; all tests; freeze/commit; bounded live experiment.
 ## Task 4
-- [ ] Full offline replay, independent outcome review, bilingual report and cost reconciliation.
+- [x] Full offline replay, independent outcome review, bilingual report and cost reconciliation.
 - [ ] Publish branch/draft PR and verify Windows/Linux CI.
