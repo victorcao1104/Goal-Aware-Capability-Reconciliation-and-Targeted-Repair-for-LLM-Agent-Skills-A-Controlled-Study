@@ -9,6 +9,9 @@ This repository separates the original scientific record from later reproduction
 | Read findings | PDF viewer | `output/pdf/goal-aware-skill-study.pdf` | 12 body pages, one reference page |
 | Verify artifact integrity | Python 3.12, standard library | `python -m scripts.reproduce --verify-only` | Frozen distributed files and 3,595 evidence records match their hashes |
 | Recompute results | Python 3.12 and `requirements.lock` | `python -m scripts.reproduce` | Summary/facts match within 1e-10; three LaTeX tables match byte-for-byte |
+| Replay v2 repair pilot | Python 3.12 | `python -m research_v2.reproduce` | 384 trajectories and request evidence |
+| Replay v3 complex repair | Python 3.12 | `python -m research_v3.reproduce` | 324 trajectories, adaptive histories, paired summaries and exhaustive complexity certificates |
+| Regenerate v3 presentation | Python 3.12 and `requirements.lock` | `python -m research_v3.tools.report` | Derived tables, counts and plots from v3 recorded evidence |
 | Test implementation | Same Python environment | `python -m unittest discover -s tests` | Deterministic regression checks, including reproduction-integrity tests |
 | Rebuild manuscript | IEEEtran TeX distribution or Tectonic | `tectonic paper/main.tex` | Editable source builds the paper; no model calls |
 | Collect new model samples | OpenAI access, authorized budget, Docker Linux engine, original pinned dataset | `docs/reproduction.md` | New experiment, not guaranteed identical stochastic outcomes |
