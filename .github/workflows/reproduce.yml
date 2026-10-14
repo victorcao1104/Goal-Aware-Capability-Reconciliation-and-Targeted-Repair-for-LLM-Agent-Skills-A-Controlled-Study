@@ -50,3 +50,9 @@ jobs:
       - name: Replay v2 mechanism pilot without an API key
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m research_v2.reproduce
+      - name: Multi-site dependency v3 tests
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m unittest discover -s tests_v3
+      - name: Replay v3 adaptive study and complexity certificates
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v3.reproduce
