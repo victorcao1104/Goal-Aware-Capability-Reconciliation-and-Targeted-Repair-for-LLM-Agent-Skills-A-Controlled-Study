@@ -40,6 +40,6 @@ Original cumulative US$20 cap; no preparation API calls; existing approved ignor
 - [x] Generate readable sample bundles and machine-readable fixture/schema manifests.
 - [x] Verify synthetic reference and adversarial regression tests, old freezes, deterministic offline fake-client exercise (clearly not model results).
 - [x] Independent gpt-6-luna review, resolve important findings, freeze and commit before any paid measurement.
-- [ ] Publish prepared branch/draft PR and clearly mark model experiment as not yet run.
+- [x] Publish prepared branch/draft PR and clearly mark model experiment as not yet run.
 
 Review disposition: independent gpt-6-luna review found omission completeness, request-resume integrity and missingness reporting issues; all were addressed with regressions. Final read-only review found no remaining preparation blocker. No paid v4 run is authorized by this preparation checklist itself.
