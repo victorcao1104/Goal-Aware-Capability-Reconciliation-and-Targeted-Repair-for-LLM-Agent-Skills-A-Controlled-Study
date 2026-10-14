@@ -68,3 +68,12 @@ jobs:
       - name: Verify v4 reporting diagnostics and figure hashes
         working-directory: ${{ runner.temp }}/gcr-source
         run: python -m scripts.report_v4 --verify
+      - name: Policy contamination v5 tests
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m unittest discover -s tests_v5
+      - name: Replay v5 policy, audit and update evidence
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m research_v5.reproduce
+      - name: Verify v5 reports and figure hashes
+        working-directory: ${{ runner.temp }}/gcr-source
+        run: python -m scripts.report_v5 --verify

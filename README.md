@@ -2,6 +2,8 @@
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
 
+**Research branch v5:** [Findings (中文)](docs/v5-findings.zh.md) · [Measured results](research_v5/RESULTS.md) · [Offline replay](research_v5/README.md). Forty paired Skill narratives did not induce additional permissions in the strong Mixed baseline. Graph/Flat raw verdicts tied; graph had one more evidence-valid logical use. Both auditors failed all eight clean uses because the scanner inferred uncertainty about absent error branches. This is not evidence of a useful graph advantage. Cumulative estimated usage: **US$1.645422625 / US$20**. All 562 v5 requests and 912 method/update records are retained.
+
 **Research branch v4 — measured:** [Findings (中文)](docs/v4-findings.zh.md) · [Recorded results](research_v4/RESULTS.md) · [Offline replay](research_v4/README.md). All 480 trajectories completed with 426 unique gpt-6-luna requests. Neither contract condition produced excess permissions on the authored attacks. Explicit graphs showed no robust benefit; audit evidence-interface failures materially affected the primary metric. Cumulative estimated usage: **US$1.435230375 / US$20**.
 
 **Research branch v3:** [Findings (中文)](docs/v3-findings.zh.md) · [Measured results](research_v3/RESULTS.md) · [Offline replay](research_v3/README.md). Multi-site repair still yielded 72/72 attack success for all three equally capable planners. Correct graphs saved three requests versus no graph but cost 0.78% more. Cumulative estimated usage: **US$1.257365875 / US$20**. The original paper and v1/v2 scientific records remain preserved.

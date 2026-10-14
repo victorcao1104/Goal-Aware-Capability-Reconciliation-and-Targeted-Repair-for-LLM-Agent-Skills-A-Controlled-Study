@@ -1,0 +1,18 @@
+# SDD ledger — plan: docs/superpowers/plans/2026-10-14-policy-contamination-v5.md
+Spec inspected. Task 1 active.
+Task 1: complete — fixtures/core RED missing module -> GREEN 7 checks; 92 cases, exact paired behavior, finite provenance and gate effects.
+Task 2: complete — boundaries/replay RED missing module and invalid-pair zero metric -> GREEN 19 tests total. Prior suites 61+25+14+20 passed; v4 replay 527 files/480 trajectories/426 requests.
+Task 3 premeasurement review: fresh read-only gpt-6-luna reviewer found two important issues and two clarification gaps. Both important issues fixed before any paid v5 calls: per-request infrastructure records and recorded trusted-harness expansion control. RED missing control function -> GREEN 19 tests. Temp scratch uses repository work directory because sandbox default Temp denied nested creation.
+Review clarifications addressed: E3 initial maps explicitly identified as intervention inputs, exact discordant pair IDs included in sealed analysis.
+Ruling: use trusted test-harness allowlist intervention instead of claiming authenticated receipts; no real authentication system implemented. Cost: no authentication assurance claim.
+Task 3 active — freeze and commit before live execution. Original approved credential and cumulative ledger reused; initial conservative total USD1.435230375.
+Task 3: complete — measured unchanged source 3cf5a2def4aee6c4e628a9f298c1e15e6ecff093. 360 jobs, 562 physical requests, all ok; 736 method rows plus 176 updates. No interruptions or outcome-driven edits. Offline replay: 929 evidence files verified. Increment USD0.210192250, cumulative USD1.645422625, no pending reservations.
+Task 4: active — English/Chinese reports, diagnostic JSON and figure generated; independent gpt-6-luna measurement reviewer reproduced the complete data and reconciled ledger. Scanner false uncertainty on absent on_error branches explains 0/8 clean completion and is explicitly reported. Flat/Graph raw correctness ties; +1 evidence-valid logical use does not establish unique graph value.
+Ruling: this suite's directly forbidden destination and deletion allow verdicts without resolving provenance, so its graph comparison is not a graph-essential challenge. Retain the predeclared result and disclose sensitivity limitation rather than redesigning after outcomes. Cost: cannot resolve general graph value from this round.
+Pre-flight: Task 1 case authority/atoms consumed by Task 2 builders and analysis; oracle remains evaluator-only.
+Pre-flight: Task 2 requests consumed by Task 3 frozen replay and Task 4 reporting; shared source of truth is retained request values.
+Ruling: native managed-worktree creation returned Not a git repository for the parent mirror. Use clean nested checkout on new research/policy-contamination-v5 branch; prior branch preserved. Cost if wrong: less concurrent-checkout isolation; no concurrent writers authorized.
+Ruling: concentrate on initial contamination, graph attribution and update controls; do not build a deliberately authority-laundering synthetic-task strawman. Synthetic task generation alone does not demonstrate a security failure. Cost: no empirical claims about that pipeline.
+Ruling: AuthBench prevents claiming novelty for task-to-policy generation itself. Claim only bounded controlled causal study. Cost: narrower contribution.
+
+Task 4: implementation and publication complete — GitHub draft PR #4 on research/policy-contamination-v5; 139 tests, complete offline replay and report verification pass locally. Windows/Linux remote CI run 38523303174 started; final response will report its observed status. No deferred code-review findings. Original paper remains frozen; v5 is a candid experimental supplement.

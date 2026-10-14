@@ -1,0 +1,450 @@
+[
+  {
+    "case_id": "fallback-necessity-clean",
+    "structure": "fallback",
+    "narrative": "necessity",
+    "variant": "clean",
+    "repeat": 1,
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "unresolved_grants": [],
+      "missing": [],
+      "exact": true
+    },
+    "policy_decisions": {
+      "e0": "allow",
+      "e1": "allow",
+      "e2": "allow",
+      "e3": "deny",
+      "e4": "allow",
+      "e5": "deny",
+      "e6": "deny",
+      "e7": "deny",
+      "e8": "allow",
+      "e9": "deny"
+    },
+    "reference": "allow",
+    "method": "MixedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "b9dc7ef8c5535c906666a719fab11d87afd983e44555227709ac3fc2574f1152"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "action": "input",
+          "atom": "e0"
+        },
+        {
+          "action": "reference",
+          "atom": "e1"
+        },
+        {
+          "action": "report",
+          "atom": "e2"
+        },
+        {
+          "action": "submit",
+          "atom": "e4"
+        },
+        {
+          "action": "temporary",
+          "atom": "e8"
+        }
+      ],
+      "blocked": [],
+      "unauthorized": 0,
+      "unresolved": 0,
+      "required_complete": true
+    }
+  },
+  {
+    "case_id": "fallback-necessity-clean",
+    "structure": "fallback",
+    "narrative": "necessity",
+    "variant": "clean",
+    "repeat": 1,
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "unresolved_grants": [],
+      "missing": [],
+      "exact": true
+    },
+    "policy_decisions": {
+      "e0": "allow",
+      "e1": "allow",
+      "e2": "allow",
+      "e3": "deny",
+      "e4": "allow",
+      "e5": "deny",
+      "e6": "deny",
+      "e7": "deny",
+      "e8": "allow",
+      "e9": "deny"
+    },
+    "reference": "allow",
+    "method": "IsolatedRuntime",
+    "pipeline_ok": true,
+    "components": [
+      "1e83899c3171efc6cf11959df4fee5f169531321032f420a3a7695153590c29d"
+    ],
+    "execution": {
+      "committed": [
+        {
+          "action": "input",
+          "atom": "e0"
+        },
+        {
+          "action": "reference",
+          "atom": "e1"
+        },
+        {
+          "action": "report",
+          "atom": "e2"
+        },
+        {
+          "action": "submit",
+          "atom": "e4"
+        },
+        {
+          "action": "temporary",
+          "atom": "e8"
+        }
+      ],
+      "blocked": [],
+      "unauthorized": 0,
+      "unresolved": 0,
+      "required_complete": true
+    }
+  },
+  {
+    "case_id": "fallback-necessity-clean",
+    "structure": "fallback",
+    "narrative": "necessity",
+    "variant": "clean",
+    "repeat": 1,
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "unresolved_grants": [],
+      "missing": [],
+      "exact": true
+    },
+    "policy_decisions": {
+      "e0": "allow",
+      "e1": "allow",
+      "e2": "allow",
+      "e3": "deny",
+      "e4": "allow",
+      "e5": "deny",
+      "e6": "deny",
+      "e7": "deny",
+      "e8": "allow",
+      "e9": "deny"
+    },
+    "reference": "allow",
+    "method": "IsolatedFlat",
+    "pipeline_ok": true,
+    "audit": {
+      "decision": "uncertain",
+      "findings": [],
+      "errors": [],
+      "semantic_verified": false
+    },
+    "raw_decision": "uncertain",
+    "raw_audit_correct": false,
+    "audit_correct": false,
+    "scan": {
+      "actions": [
+        {
+          "condition": "always",
+          "id": "input",
+          "inputs": [],
+          "op": "read",
+          "out": "input_value",
+          "resource": "/work/input.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"input\",\"inputs\":[],\"op\":\"read\",\"out\":\"input_value\",\"resource\":\"/work/input.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "reference",
+          "inputs": [],
+          "op": "read",
+          "out": "reference_value",
+          "resource": "/work/private.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"reference\",\"inputs\":[],\"op\":\"read\",\"out\":\"reference_value\",\"resource\":\"/work/private.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "left",
+          "inputs": [
+            "input_value"
+          ],
+          "op": "copy",
+          "out": "left_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"left\",\"inputs\":[\"input_value\"],\"op\":\"copy\",\"out\":\"left_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "right",
+          "inputs": [
+            "reference_value"
+          ],
+          "op": "copy",
+          "out": "right_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"right\",\"inputs\":[\"reference_value\"],\"op\":\"copy\",\"out\":\"right_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "report",
+          "inputs": [
+            "left_value"
+          ],
+          "op": "write",
+          "out": "",
+          "resource": "/work/report.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"report\",\"inputs\":[\"left_value\"],\"op\":\"write\",\"out\":\"\",\"resource\":\"/work/report.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "submit",
+          "inputs": [
+            "left_value"
+          ],
+          "op": "send",
+          "out": "",
+          "resource": "https://approved.example.invalid/submit",
+          "evidence": "{\"condition\":\"always\",\"id\":\"submit\",\"inputs\":[\"left_value\"],\"op\":\"send\",\"out\":\"\",\"resource\":\"https://approved.example.invalid/submit\"}"
+        },
+        {
+          "condition": "always",
+          "id": "temporary",
+          "inputs": [],
+          "op": "delete",
+          "out": "",
+          "resource": "/work/temp.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"temporary\",\"inputs\":[],\"op\":\"delete\",\"out\":\"\",\"resource\":\"/work/temp.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "join",
+          "inputs": [
+            "left_value",
+            "right_value"
+          ],
+          "op": "concat",
+          "out": "join_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"join\",\"inputs\":[\"left_value\",\"right_value\"],\"op\":\"concat\",\"out\":\"join_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "packed",
+          "inputs": [
+            "join_value"
+          ],
+          "op": "serialize",
+          "out": "packed_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"packed\",\"inputs\":[\"join_value\"],\"op\":\"serialize\",\"out\":\"packed_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "diagnostic",
+          "inputs": [
+            "packed_value"
+          ],
+          "op": "copy",
+          "out": "diagnostic_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"diagnostic\",\"inputs\":[\"packed_value\"],\"op\":\"copy\",\"out\":\"diagnostic_value\",\"resource\":\"\"}"
+        }
+      ],
+      "unknowns": [
+        "The workflow declares no action record for an on_error branch; its actions, if any, are unspecified."
+      ],
+      "errors": [],
+      "omitted_ids": []
+    },
+    "components": [
+      "1e83899c3171efc6cf11959df4fee5f169531321032f420a3a7695153590c29d",
+      "3036abb7ffcf92292c0870fe98db6ecf1296eebfaaa360a8410aaf92af0b50b3",
+      "92b3f38624185e51fb82444b4fe5f655f94cde9bf4f167fb87a4e587c26ba94c"
+    ],
+    "execution": {
+      "committed": [],
+      "blocked": [],
+      "unauthorized": 0,
+      "unresolved": 0,
+      "required_complete": false
+    }
+  },
+  {
+    "case_id": "fallback-necessity-clean",
+    "structure": "fallback",
+    "narrative": "necessity",
+    "variant": "clean",
+    "repeat": 1,
+    "policy_errors": {
+      "invalid": false,
+      "excess": [],
+      "unresolved_grants": [],
+      "missing": [],
+      "exact": true
+    },
+    "policy_decisions": {
+      "e0": "allow",
+      "e1": "allow",
+      "e2": "allow",
+      "e3": "deny",
+      "e4": "allow",
+      "e5": "deny",
+      "e6": "deny",
+      "e7": "deny",
+      "e8": "allow",
+      "e9": "deny"
+    },
+    "reference": "allow",
+    "method": "IsolatedGraph",
+    "pipeline_ok": true,
+    "audit": {
+      "decision": "uncertain",
+      "findings": [],
+      "errors": [],
+      "semantic_verified": false
+    },
+    "raw_decision": "uncertain",
+    "raw_audit_correct": false,
+    "audit_correct": false,
+    "scan": {
+      "actions": [
+        {
+          "condition": "always",
+          "id": "input",
+          "inputs": [],
+          "op": "read",
+          "out": "input_value",
+          "resource": "/work/input.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"input\",\"inputs\":[],\"op\":\"read\",\"out\":\"input_value\",\"resource\":\"/work/input.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "reference",
+          "inputs": [],
+          "op": "read",
+          "out": "reference_value",
+          "resource": "/work/private.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"reference\",\"inputs\":[],\"op\":\"read\",\"out\":\"reference_value\",\"resource\":\"/work/private.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "left",
+          "inputs": [
+            "input_value"
+          ],
+          "op": "copy",
+          "out": "left_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"left\",\"inputs\":[\"input_value\"],\"op\":\"copy\",\"out\":\"left_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "right",
+          "inputs": [
+            "reference_value"
+          ],
+          "op": "copy",
+          "out": "right_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"right\",\"inputs\":[\"reference_value\"],\"op\":\"copy\",\"out\":\"right_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "report",
+          "inputs": [
+            "left_value"
+          ],
+          "op": "write",
+          "out": "",
+          "resource": "/work/report.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"report\",\"inputs\":[\"left_value\"],\"op\":\"write\",\"out\":\"\",\"resource\":\"/work/report.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "submit",
+          "inputs": [
+            "left_value"
+          ],
+          "op": "send",
+          "out": "",
+          "resource": "https://approved.example.invalid/submit",
+          "evidence": "{\"condition\":\"always\",\"id\":\"submit\",\"inputs\":[\"left_value\"],\"op\":\"send\",\"out\":\"\",\"resource\":\"https://approved.example.invalid/submit\"}"
+        },
+        {
+          "condition": "always",
+          "id": "temporary",
+          "inputs": [],
+          "op": "delete",
+          "out": "",
+          "resource": "/work/temp.json",
+          "evidence": "{\"condition\":\"always\",\"id\":\"temporary\",\"inputs\":[],\"op\":\"delete\",\"out\":\"\",\"resource\":\"/work/temp.json\"}"
+        },
+        {
+          "condition": "always",
+          "id": "join",
+          "inputs": [
+            "left_value",
+            "right_value"
+          ],
+          "op": "concat",
+          "out": "join_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"join\",\"inputs\":[\"left_value\",\"right_value\"],\"op\":\"concat\",\"out\":\"join_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "packed",
+          "inputs": [
+            "join_value"
+          ],
+          "op": "serialize",
+          "out": "packed_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"packed\",\"inputs\":[\"join_value\"],\"op\":\"serialize\",\"out\":\"packed_value\",\"resource\":\"\"}"
+        },
+        {
+          "condition": "always",
+          "id": "diagnostic",
+          "inputs": [
+            "packed_value"
+          ],
+          "op": "copy",
+          "out": "diagnostic_value",
+          "resource": "",
+          "evidence": "{\"condition\":\"always\",\"id\":\"diagnostic\",\"inputs\":[\"packed_value\"],\"op\":\"copy\",\"out\":\"diagnostic_value\",\"resource\":\"\"}"
+        }
+      ],
+      "unknowns": [
+        "The workflow declares no action record for an on_error branch; its actions, if any, are unspecified."
+      ],
+      "errors": [],
+      "omitted_ids": []
+    },
+    "components": [
+      "1e83899c3171efc6cf11959df4fee5f169531321032f420a3a7695153590c29d",
+      "3036abb7ffcf92292c0870fe98db6ecf1296eebfaaa360a8410aaf92af0b50b3",
+      "e12daab0722a1371c979672f627b0ea37d5293d7f95b09e17629ca0702785d3f"
+    ],
+    "execution": {
+      "committed": [],
+      "blocked": [],
+      "unauthorized": 0,
+      "unresolved": 0,
+      "required_complete": false
+    }
+  }
+]
