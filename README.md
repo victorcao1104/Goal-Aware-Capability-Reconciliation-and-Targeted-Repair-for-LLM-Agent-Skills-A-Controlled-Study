@@ -2,6 +2,8 @@
 
 Research workspace for Victor Cao, University of Auckland, Faculty of Science.
 
+**Research branch v3:** [Findings (中文)](docs/v3-findings.zh.md) · [Measured results](research_v3/RESULTS.md) · [Offline replay](research_v3/README.md). Multi-site repair still yielded 72/72 attack success for all three equally capable planners. Correct graphs saved three requests versus no graph but cost 0.78% more. Cumulative estimated usage: **US$1.257365875 / US$20**. The original paper and v1/v2 scientific records remain preserved.
+
 **Research branch v2:** [Feasibility and findings (中文)](docs/v2-feasibility-and-findings.zh.md) · [Development pilot results](research_v2/RESULTS.md) · [Offline v2 replay](research_v2/README.md). Upstream recomputation recovered tasks that handle reuse could not, but the graph added no observed benefit over equally capable planning in this 48-case development pilot. The v1.0.0 paper and evidence below remain frozen.
 
 [中文说明](README.zh-CN.md) · [Reproduction guide](docs/artifact-guide.md) · [Paper](output/pdf/goal-aware-skill-study.pdf) · [Automated checks](https://github.com/victorcao1104/Goal-Aware-Capability-Reconciliation-and-Targeted-Repair-for-LLM-Agent-Skills-A-Controlled-Study/actions/workflows/reproduce.yml)

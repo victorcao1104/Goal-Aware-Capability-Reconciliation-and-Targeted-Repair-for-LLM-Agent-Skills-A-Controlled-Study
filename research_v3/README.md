@@ -13,6 +13,8 @@ python -m research_v3.reproduce
 
 No API key or Docker is needed. Replay verifies frozen code, older study freezes, all evidence hashes, complexity certificates, adaptive request/history linkage, every trajectory and every aggregate field. Published controls take zero model calls. Simulation uses synthetic files and a mock outbox; nothing is sent externally.
 
+For tables, secondary descriptive counts and a comparison figure, run `python -m research_v3.tools.report`. These presentation artifacts live under `report/` and are derived from the immutable `results/` evidence. They do not redefine the registered outcome or acceptance rules.
+
 ## Artifact map
 
 - `fixtures.py`: six workflow families, trusted goals and separate expected values.

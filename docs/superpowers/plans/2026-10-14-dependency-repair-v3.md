@@ -17,18 +17,18 @@ gpt-6-luna; cumulative US$20; no oracle feedback; 2 requests, 4 candidates/reque
 - Offline replay must verify the full schedule and request-to-trial linkage.
 
 ## Task 1: Workflows and authority (research_v3/fixtures.py, oracle.py, engine.py; tests_v3/test_core.py)
-- [ ] Write and observe failing tests for six topologies, correct references, blocked attacks, single-edit failure, multiple-edit restoration and stale receipt rejection.
-- [ ] Implement fixtures, independent expected outputs and bounded candidate execution.
-- [ ] Verify and record complexity certificates, including every catalogued single edit.
+- [x] Write and observe failing tests for six topologies, correct references, blocked attacks, single-edit failure, multiple-edit restoration and stale receipt rejection.
+- [x] Implement fixtures, independent expected outputs and bounded candidate execution.
+- [x] Verify and record complexity certificates, including every catalogued single edit.
 
 ## Task 2: Equal model interfaces and study (research_v3/model.py, run.py, analysis.py; tests_v3/test_study.py)
-- [ ] Test oracle exclusion, payload parity except index, budget limits, retry accounting and resume.
-- [ ] Implement identical prompts, two-round feedback, three-repeat schedule, paired metrics and manifest.
-- [ ] Obtain fresh review, fix important findings, freeze before paid calls.
+- [x] Test oracle exclusion, payload parity except index, budget limits, retry accounting and resume.
+- [x] Implement identical prompts, two-round feedback, three-repeat schedule, paired metrics and manifest.
+- [x] Obtain fresh review, fix important findings, freeze before paid calls.
 
 ## Task 3: Evidence and delivery (research_v3/reproduce.py, README.md, RESULTS.md; CI)
-- [ ] Run Luna trajectories without exceeding the shared cap; preserve failures.
-- [ ] Replay full evidence offline and verify old freezes/tests.
+- [x] Run Luna trajectories without exceeding the shared cap; preserve failures.
+- [x] Replay full evidence offline and verify old freezes/tests.
 - [ ] Document positive or null findings with limitations, review claims, push branch and draft PR.
 
 ## Ruling
